@@ -1,0 +1,30 @@
+namespace = ME_Corsica_Events
+
+#Piracy event for Corsica
+country_event = {
+	id = ME_Corsica_Events.1
+	title = ME_Corsica_Events.1.t
+	desc = ME_Corsica_Events.1.d
+	picture = REVOLUTION_eventPicture
+
+	major = yes
+	is_triggered_only = yes
+
+	#Become pirate
+	option = {
+		name = ME_Corsica_Events.1.a
+		
+		change_government = republic
+		add_government_reform = pirate_republic_reform
+		add_years_of_income = 3
+		add_stability = -1
+	}
+	
+	#Don't become
+	option = {
+		name = ME_Corsica_Events.1.b
+		
+		add_stability = 1
+		add_prestige = 5
+	}
+}
