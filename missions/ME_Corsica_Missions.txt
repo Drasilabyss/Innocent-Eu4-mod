@@ -4,19 +4,19 @@ COR_missions_1 = {
 	ai = yes
 	potential = {
 		tag = COR
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
+		#the flag is not needed in this case (but you put it correctly) because the country does not have vanilla mission
 	}
 	has_country_shield = yes
 	
 	corsica_genoese_piracy = {
 		icon = mission_assemble_an_army
 		required_missions = { 
-			corsica_seek_support_from_aboard 
-			corsica_develop_the_island 
+			corsica_seek_support_from_aboard
+			#the other mission is not required (although the lines seemed in that way
 		}
 		position = 2
 		trigger = {
-			101 = {
+			1298 = { #despite working without any problem, tradenodes id are preferable
 				privateer_power = {
 					country = ROOT
 					share = 15
@@ -59,7 +59,6 @@ COR_missions_2 = {
 	ai = yes
 	potential = {
 		tag = COR
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 	
@@ -89,10 +88,20 @@ COR_missions_2 = {
 		position = 3
 		provinces_to_highlight = { is_capital_of = ROOT }
 		trigger = {
-			capital_scope = {
-				has_building = temple
-				has_building = marketplace
-				has_building = dock
+			#Intended the mission as Corsica as a country instead of the province itself (that you may not own)
+			#requested that it can have one building, or its upgraded version
+			OR = {
+				temple = 1
+				cathedral = 1
+			}
+			OR = {
+				marketplace = 1
+				trade_depot = 1
+				stock_exchange = 1
+			}
+			OR = {
+				dock = 1
+				dry_dock = 1
 			}
 		}
 		effect = {
@@ -147,7 +156,6 @@ COR_missions_3 = {
 	ai = yes
 	potential = {
 		tag = COR
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 	
@@ -162,17 +170,27 @@ COR_missions_3 = {
 			OR = {
 				is_vassal = no
 				is_in_war = {
-					attacker_leader = root
+					attacker_leader = ROOT #ROOT not root
 					casus_belli = cb_independence_war	
 				}
 			}
 		}
 		effect = {
 			if = {
-				limit = { has_dlc = "Golden Century" }
+				#this is a good way to do it, but you should even ask if it already has a flagship
+				#so you can merge everything into one limit
+				limit = {
+					has_dlc = "Golden Century"
+					has_flagship = no
+					any_owned_province = {
+						has_port = yes
+					}
+				}
 				random_owned_province = {
-					limit = { has_port = yes }
-					create_flagship = {
+					limit = {
+						has_port = yes
+					}
+					create_flagship = {    
 						name = "Vittoria"
 						type = galley
 					}
@@ -205,6 +223,14 @@ COR_missions_3 = {
 		}
 		effect = {
 			country_event = { id = ME_Corsica_Events.1 }
+			#forgot to add the claims on Sardinia
+			corsica_sardinia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 	
@@ -325,7 +351,6 @@ COR_mission_4 = {
 	ai = yes
 	potential = {
 		tag = COR
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 	
@@ -333,7 +358,9 @@ COR_mission_4 = {
 		icon = mission_assemble_an_army
 		position = 1
 		provinces_to_highlight = { is_capital_of = ROOT }
-		trigger = { capital_scope = { num_of_times_improved = 4 } }
+		trigger = {
+			capital_scope = { num_of_times_improved = 4 }
+		}
 		effect = {
 			capital_scope = {
 				add_province_modifier = {
@@ -341,6 +368,9 @@ COR_mission_4 = {
 					duration = -1
 				}
 			}
+			#forgot this parrt
+			add_yearly_manpower = 2
+			add_years_of_income = 2
 		}
 	}
 	
@@ -386,15 +416,4 @@ COR_mission_4 = {
 			add_navy_tradition = 20
 		}
 	}
-}
-
-COR_missions_5 = {
-	slot = 5
-	generic = no
-	ai = yes
-	potential = {
-		tag = COR
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
-	}
-	has_country_shield = yes
 }
