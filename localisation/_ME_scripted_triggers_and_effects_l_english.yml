@@ -3,6 +3,7 @@
  IS_IN_SAME_COLONIAL_REGION_AS_TT: "Are in the same §Ycolonial region§!"
  IS_NOT_IN_SAME_COLONIAL_REGION_AS_TT: "Are NOT in the same §Ycolonial region§!"
  NUM_OF_SUPPORTED_INDEPENDENCIES_TT: " countries get their independence supported by §Y[This.GetName]§!"
+ NUM_OF_SUPPORTING_INDEPENDENCIES_TT: " countries support the independence of §Y[This.GetName]§!"
 
  # Scripted Effects:
  BUILD_MATCHING_MANUFACTORY_IN_THIS_PROVINCE: "If possible, the matching §YManufactory§! for the existing trade good is built. \nIf §Y[Root.GetName]§! does not have the required tech level, §G25§! of the specific monarch power is added instead. \nIf no trade good exist, the §Ybase tax§!, §Yproduction§! and §Ymanpower§! is increased with §G1§! each.\n"

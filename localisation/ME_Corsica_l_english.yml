@@ -1,5 +1,5 @@
 ﻿l_english:
- #Missions
+ # Missions:
  corsica_seek_support_from_aboard_title: "Seek Support From Abroad"
  corsica_seek_support_from_aboard_desc: "Our island is incapable of rebelling against the mighty Genoese Republic on its own. For years we have tried and failed, and it is time for a new strategy. Genoa's rivals are many, and we ought to exploit every diplomatic weak point they have so we can finally be free once again!"
  corsica_develop_the_island_title: "Develop the Island"
@@ -27,7 +27,7 @@
  corsica_capture_of_sicily_title: "Capture of Sicily"
  corsica_capture_of_sicily_desc: "Sicily is within our grasp. Securing this ancient island will grant us undeniable power over the trade that flows through the Mediterranean Sea, but we will have to fight with valor if we are to seize the island. Keep your heads up and backs straight, men! We sail onward!"
 
- #Modifiers
+ # Modifiers:
  COR_freedom_for_corsica: "Freedom for Corsica!"
  COR_urban_development: "Urban Development"
  COR_control_over_genoa: "Control over Geona"
@@ -37,8 +37,8 @@
  COR_mare_piratae: "Mare Piratae"
  COR_sicily_wrested: "Sicily Wrested"
  COR_school_of_florence: "School of Florence"
- 
- #Events
+
+ # Events:
  ME_Corsica_Events.1.t: "Piracy in Corsica?"
  ME_Corsica_Events.1.d: "Resentment for foreign traders has boiled to an all time high in the Corsican streets. The Aragonese and Genoese have destroyed Corsican ways of life with their lust for wealth! Some of our advisors suggest we take a proactive stance towards the traders - piracy. For all these years under foreign domination, one must admit that the revenge would be satisfying."
  ME_Corsica_Events.1.a: "To the sea, friends!"
