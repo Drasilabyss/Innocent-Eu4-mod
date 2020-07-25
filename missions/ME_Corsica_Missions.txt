@@ -128,7 +128,7 @@ COR_missions_2 = {
 			}
 			OR = {
 				dock = 1
-				dry_dock = 1
+				drydock = 1
 			}
 		}
 		effect = {
