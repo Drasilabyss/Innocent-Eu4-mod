@@ -26,8 +26,8 @@
  nap_sicilian_kingship_desc: "Annus Domini 1059, Pope Nicholas II crowned our beloved king Robertus Guiscardus dux Siciliae and thus our heritage was created, when we first united the crown of Sicily and the crown of Apulia et Calabria. \nMany years have passed since then and many foreigners have destroyed and broken the union, and today our kingdom refers to only the Sicily before the strait of Messina: Regnum Siciliae Citra Pharum. \nA strong duty lies ahead, reuniting the two crowns, and declare as the new successors and Rex Utriusque Siciliae."
  nap_provence_title: "The County of Provence"
  nap_provence_desc: "The county of Provence is the home of our King, we should look into enstabilishing better tides with the King of the Provence attempting to restore the Union that our people had once again."
- nap_freedom_title: "Gain Independence"
- nap_freedom_desc: "The years under foreign dominations must end, now, we are a proud people and for centuries we have been under foreign rules from the Arabs, the Normans, the French, the Germans, we won't stand under the Spaniard now. We must seek to assemble the mighty army we can, guided by the finest man. We may ask help from other nations in our fight for the independency."
+ nap_gain_independence_title: "Gain Independence"
+ nap_gain_independence_desc: "The years under foreign dominations must end, now, we are a proud people and for centuries we have been under foreign rules from the Arabs, the Normans, the French, the Germans, we won't stand under the Spaniard now. We must seek to assemble the mighty army we can, guided by the finest man. We may ask help from other nations in our fight for the independency."
  nap_trinacria_title: "Trinacria"
  nap_trinacria_desc: "The Island is extraordinary sedimentation of beauty. A mixture of peoples and cultures. An uninterrupted, millennial take and give. A mutual enrichment of winners and losers. Take Palermo, a city where the concept of crisis, in a philosophical key, that is, a perpetual motion of changes makes us understand the meaning of history. The alternative to the condition of crisis is immobility, therefore nothing. There is probably no city in the world that offers this contamination of cultures, from classical Greek to Romanesque, from Arabic to Norman. And so much more."
  nap_foothold_levant_title: "Entering the Levant"
@@ -169,7 +169,7 @@
  nap_champion_christianity: "Champions of Christianity"
  #5th column
  nap_sicilian_school: "Scuola Siciliana"
- nap_university_modifier: "Federico II"
+ nap_federico_II: "Federico II"
  nap_lighthouse_otranto: "Lighthouse of Otranto"
 
  #Opinion modifier

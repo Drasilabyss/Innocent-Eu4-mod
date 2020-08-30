@@ -7,7 +7,10 @@ naples_missions_1 = {
 			tag = NAP
 			AND = {
 				was_tag = NAP
-				tag = TTS
+				OR = {
+					tag = TTS
+					tag = ITA
+				}
 			}
 		}
 		OR = {
@@ -63,7 +66,7 @@ naples_missions_1 = {
 	nap_papal_relations = {
 		icon = defender_of_the_faith
 		required_missions = { 
-			nap_freedom
+			nap_gain_independence
 			nap_curia_controller
 		}
 		position = 4
@@ -246,7 +249,10 @@ naples_missions_2 = {
 			tag = NAP
 			AND = {
 				was_tag = NAP
-				tag = TTS
+				OR = {
+					tag = TTS
+					tag = ITA
+				}
 			}
 		}
 		OR = {
@@ -308,7 +314,7 @@ naples_missions_2 = {
 
 	nap_republic_amalfi = {
 		icon = develop_naples
-		required_missions = { nap_freedom }
+		required_missions = { nap_gain_independence }
 		provinces_to_highlight = {
 			province_id = 2983
 			OR = {
@@ -620,7 +626,10 @@ naples_missions_3 = {
 			tag = NAP
 			AND = {
 				was_tag = NAP
-				tag = TTS
+				OR = {
+					tag = TTS
+					tag = ITA
+				}
 			}
 		}
 		OR = {
@@ -747,7 +756,7 @@ naples_missions_3 = {
 		}
 	}
 
-	nap_freedom = {
+	nap_gain_independence = {
 		icon = union_with_naples
 		required_missions = { }
 		position = 3
@@ -805,7 +814,7 @@ naples_missions_3 = {
 
 	nap_trinacria = {
 		icon = unite_the_two_sicilies
-		required_missions = { nap_freedom }
+		required_missions = { nap_gain_independence }
 		provinces_to_highlight = {
 			OR = {
 				area = sicily_area
@@ -1091,6 +1100,170 @@ naples_missions_3 = {
 				duration = 18250
 			}
 		}
+	}	
+
+	nap_sicilian_union = {
+		icon = unite_the_two_sicilies
+		required_missions = {
+			nap_provinces_africa
+			nap_ruling_trade
+			nap_conquest_constantinople
+		}
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = apulia_area
+				area = naples_area
+				area = calabria_area
+				area = western_sicily_area
+				area = sicily_area
+			}
+		}
+		trigger = {
+			prestige = 75
+			apulia_area = {
+				type = all
+				owned_by = ROOT
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					prosperity = 50
+				}
+				else = {
+					devastation = 0
+				}
+			}
+			naples_area = {
+				type = all
+				owned_by = ROOT
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					prosperity = 50
+				}
+				else = {
+					devastation = 0
+				}
+			}
+			calabria_area = {
+				type = all
+				owned_by = ROOT
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					prosperity = 50
+				}
+				else = {
+					devastation = 0
+				}
+			}
+			western_sicily_area = {
+				type = all
+				OR = {
+					AND = {
+						owned_by = ROOT
+						if = {
+							limit = {
+								has_dlc = "Mandate of Heaven"
+							}
+							prosperity = 50
+						}
+						else = {
+							devastation = 0
+						}
+					}
+					AND = {
+						owned_by = SIC
+						SIC = {
+							is_subject_of = ROOT
+						}
+						devastation = 0
+					}
+				}
+			}
+			sicily_area = {
+				type = all
+				OR = {
+					AND = {
+						owned_by = ROOT
+						if = {
+							limit = {
+								has_dlc = "Mandate of Heaven"
+							}
+							prosperity = 50
+						}
+						else = {
+							devastation = 0
+						}
+					}
+					AND = {
+						owned_by = SIC
+						SIC = {
+							is_subject_of = ROOT
+						}
+						devastation = 0
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = ME_The_Two_Sicilies_Events.7
+			}
+		}
+	}
+}
+
+#In case Naples wants to form Italy without TTS
+naples_missions_3_NAP = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = NAP
+			AND = {
+				tag = ITA
+				was_tag = NAP
+				NOT = { was_tag = TTS }
+			}
+		}
+		OR = {
+			NOT = { has_dlc = "Emperor" }
+			AND = {
+				has_dlc = "Emperor"
+				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+			}
+		}
+	}
+	has_country_shield = yes
+
+	nap_conquest_of_rome = {
+		icon = sway_the_pope
+		required_missions = {
+			nap_sicilian_union
+		}
+		position = 13
+		trigger = {
+			all_country = {
+				OR = {
+					AND = {
+						NOT = { culture_group = latin }
+						capital_scope = { region = italy_region }
+					}
+					army_strength = {
+						who = ROOT
+						value = 1
+					}
+				}
+			}
+		}
+		effect = {
+			118 = { add_core = ROOT }
+		}
 	}
 }
 
@@ -1103,7 +1276,10 @@ naples_missions_4 = {
 			tag = NAP
 			AND = {
 				was_tag = NAP
-				tag = TTS
+				OR = {
+					tag = TTS
+					tag = ITA
+				}
 			}
 		}
 		OR = {
@@ -1173,7 +1349,7 @@ naples_missions_4 = {
 
 	nap_traversing_adriatic = {
 		icon = cross_the_pindus
-		required_missions = { nap_freedom }
+		required_missions = { nap_gain_independence }
 		position = 4
 		trigger = {
 			manpower_percentage = 1
@@ -1326,7 +1502,7 @@ naples_missions_4 = {
 			}
 		}
 		effect = {
-			country_event = { id = ME_The_Two_Sicilies_Events.8 }
+			country_event = { id = ME_Naples_Events.13 }
 			thrace_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -1396,7 +1572,10 @@ naples_missions_5 = {
 			tag = NAP
 			AND = {
 				was_tag = NAP
-				tag = TTS
+				OR = {
+					tag = TTS
+					tag = ITA
+				}
 			}
 		}
 		OR = {
@@ -1432,7 +1611,7 @@ naples_missions_5 = {
 	nap_university = {
 		icon = me_mission_italy_university_nap
 		required_missions = { 
-			nap_freedom
+			nap_gain_independence
 			nap_renaissance
 		}
 		provinces_to_highlight = {
@@ -1460,9 +1639,9 @@ naples_missions_5 = {
 				}
 				add_treasury = -100
 			}
-			add_prestige = 25
+			add_prestige = 10
 			add_country_modifier = {
-				name = nap_university_modifier
+				name = nap_federico_II
 				duration = -1
 			}
 			121 = {
