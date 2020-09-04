@@ -4,17 +4,18 @@ MLO_LOM_missions_1 = {
 	ai = yes
 	potential = {
 		OR = {
-			NOT = { has_dlc = "Emperor" }
+			tag = LOM
 			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+				tag = MLO
+				OR = {
+					NOT = { has_dlc = "Emperor" }
+					AND = {
+						has_dlc = "Emperor"
+						has_country_flag = use_missions_expanded_missions_instead_of_paradox
+					}
+				}
 			}
 		}
-		OR = {
-			tag = MLO
-			tag = LOM
-		}
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 	
@@ -345,17 +346,18 @@ MLO_LOM_missions_2 = {
 	ai = yes
 	potential = {
 		OR = {
-			NOT = { has_dlc = "Emperor" }
+			tag = LOM
 			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+				tag = MLO
+				OR = {
+					NOT = { has_dlc = "Emperor" }
+					AND = {
+						has_dlc = "Emperor"
+						has_country_flag = use_missions_expanded_missions_instead_of_paradox
+					}
+				}
 			}
 		}
-		OR = {
-			tag = MLO
-			tag = LOM
-		}
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 	
@@ -671,17 +673,18 @@ MLO_LOM_missions_3 = {
 	ai = yes
 	potential = {
 		OR = {
-			NOT = { has_dlc = "Emperor" }
+			tag = LOM
 			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+				tag = MLO
+				OR = {
+					NOT = { has_dlc = "Emperor" }
+					AND = {
+						has_dlc = "Emperor"
+						has_country_flag = use_missions_expanded_missions_instead_of_paradox
+					}
+				}
 			}
 		}
-		OR = {
-			tag = MLO
-			tag = LOM
-		}
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 	
@@ -891,17 +894,18 @@ MLO_LOM_missions_4 = {
 	ai = yes
 	potential = {
 		OR = {
-			NOT = { has_dlc = "Emperor" }
+			tag = LOM
 			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+				tag = MLO
+				OR = {
+					NOT = { has_dlc = "Emperor" }
+					AND = {
+						has_dlc = "Emperor"
+						has_country_flag = use_missions_expanded_missions_instead_of_paradox
+					}
+				}
 			}
 		}
-		OR = {
-			tag = MLO
-			tag = LOM
-		}
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 	
@@ -1420,17 +1424,18 @@ MLO_LOM_missions_5 = {
 	ai = yes
 	potential = {
 		OR = {
-			NOT = { has_dlc = "Emperor" }
+			tag = LOM
 			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+				tag = MLO
+				OR = {
+					NOT = { has_dlc = "Emperor" }
+					AND = {
+						has_dlc = "Emperor"
+						has_country_flag = use_missions_expanded_missions_instead_of_paradox
+					}
+				}
 			}
 		}
-		OR = {
-			tag = MLO
-			tag = LOM
-		}
-		has_country_flag = use_missions_expanded_missions_instead_of_paradox
 	}
 	has_country_shield = yes
 
