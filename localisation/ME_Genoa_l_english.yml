@@ -75,8 +75,8 @@
  gen_merchant_army_desc: "Sometimes, in order to do business, one needs to carry some heft to their blows. Essentially, we need an army or our national sovereignty may be in jeopardy. Merchants from around Europe come here to do business, and we need to be able to protect them by any means necessary."
  gen_rout_tuscans_title: "Rout the Tuscans"
  gen_rout_tuscans_desc: "Our escapades in Italy are nearly complete, we just need to quell a particularly unruly populace: the Tuscans. They've been plotting our demise since the first day of our existance, and we must stop them at all costs."
- gen_italian_trade_title: "Italian Trade"
- gen_italian_trade_desc: "If we want true security and profit from trade, we must solidify our grasp on Italy, specifically its coastline. Our current position leaves much to be desired, but we can change that with much effort."
+ gen_reign_in_italy_title: "Reign in Italy"
+ gen_reign_in_italy_desc: "If we want true security and profit from trade, we must solidify our grasp on Italy, specifically its coastline. Our current position leaves much to be desired, but we can change that with much effort."
 
  #5
  gen_urbs_custoditas_deo_title: "Urbs Custoditas Deo"
