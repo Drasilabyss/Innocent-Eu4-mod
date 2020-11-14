@@ -244,7 +244,7 @@ genoa_missions_2 = {
 	}
 	has_country_shield = yes
 
-	gen_facing_doge_dominion = {
+	gen_doge_dominion = {
 		icon = mission_galleys_in_port
 		required_missions = {
 			gen_mighty_fleet
@@ -347,7 +347,50 @@ genoa_missions_2 = {
 		required_missions = { }
 		position = 4
 		trigger = {
-			
+			if = {
+				limit = {
+					exists = MOS
+				}
+				MOS = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = RUS
+				}
+				RUS = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = GLH
+				}
+				GLH = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					exists = GOL
+				}
+				GOL = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
 		}
 		effect = {
 			add_dip_power = 50
@@ -1161,9 +1204,8 @@ genoa_missions_5 = {
 		required_missions = {
 		}
 		position = 1
-		provinces_to_highlight = {
-		}
 		trigger = {
+			mercantilism = 20
 		}
 		effect = {
 		}

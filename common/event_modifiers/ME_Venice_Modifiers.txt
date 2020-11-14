@@ -1,27 +1,40 @@
 #1st column
-ven_all_world_against = {
-	land_morale = 0.10
-	ae_impact = -0.10
-}
-ven_house_of_visconti_modifier = {
-	army_tradition = 1
-	prestige = 1
-}
-ven_san_marco = {
-}
-
-#2nd column
-ven_adriatic_monopoly = {
-	trade_efficiency = 0.1
-	global_prov_trade_power_modifier = 0.15
+ven_venetian_spanish_mastery = {
+	local_production_efficiency = 0.10
+	local_build_cost = -0.10
 }
 ven_southern_control = {
 	trade_goods_size_modifier = 0.10
+}
+ven_ventian_grandeur = {
+	naval_forcelimit_modifier = 0.1
+	global_ship_cost = -0.1
+	global_ship_repair = 0.2
 }
 ven_venetian_merchant_fleet_modifier = {
 	global_ship_trade_power = 0.2
 	leader_naval_manuever = 1
 	global_trade_power = 0.1
+}
+ven_mediterranean_admirality_modifier = {
+	navy_tradition = 1
+	leader_naval_shock = 1
+	leader_naval_fire = 1
+}
+
+#2nd column
+ven_monopoio_adriatico = {
+	province_trade_power_modifier = 0.15
+}
+ven_venetian_wood = {
+	ship_durability = 0.05
+}
+ven_timber_surplus = {
+	galley_cost = -0.1
+}
+ven_victory_over_milan = {
+	army_tradition = 1
+	prestige = 1
 }
 
 #3rd column
@@ -37,11 +50,8 @@ ven_victory_over_genoa = {
 	meritocracy = 0.3
 }
 ven_genoan_monopoly = {
-	trade_efficiency = 0.1
-	global_prov_trade_power_modifier = 0.15
-}
-ven_black_sea_trade = {
-	trade_steering = 0.15
+	mercantilism_cost = -0.15
+	center_of_trade_upgrade_cost = -0.15
 }
 ven_mediterranean_trade_republic = {
 	trade_steering = 0.2
@@ -49,18 +59,22 @@ ven_mediterranean_trade_republic = {
 	global_trade_power = 0.1
 }
 ven_spice_dominion = {
-	republican_tradition = 1
+	republican_tradition = 0.5
+	trade_company_investment_cost = -0.10
+	trade_company_governing_cost = -0.25
 }
-ven_venetian_wood = {
-	ship_durability = 0.05
+ven_venesia_india = {
+	province_trade_power_value = 10
 }
-ven_timber_surplus = {
-	galley_cost = -0.1
+ven_venesia_india_rp = {
+	province_trade_power_modifier = 0.33
 }
-ven_mediterranean_admirality_modifier = {
-	navy_tradition = 1
-	leader_naval_shock = 1
-	leader_naval_fire = 1
+ven_all_world_against = {
+	land_morale = 0.10
+	ae_impact = -0.10
+}
+ven_black_sea_trade = {
+	trade_steering = 0.15
 }
 
 #4th column
@@ -72,10 +86,16 @@ ven_venetian_trade_practices_modifier = {
 	province_trade_power_value = 10
 	local_development_cost = -0.1
 }
-ven_ventian_grandeur = {
-	naval_forcelimit_modifier = 0.1
-	global_ship_cost = -0.1
-	global_ship_repair = 0.2
+ven_expedition_boost = {
+	range = 0.15
+}
+ven_visdomio_veneziano = {
+	state_maintenance_modifier = -0.25
+	local_tax_modifier = 0.25
+}
+ven_vicedominus_ferrarie = {
+	diplomatic_reputation = 1
+	diplomats = 1
 }
 
 #5th column
@@ -92,7 +112,7 @@ ven_colonisation_greece = {
 	province_trade_power_modifier = 0.20
 	local_unrest = -2
 }
-ven_high_navy_traidtion = {
+ven_high_navy_tradition = {
 	navy_tradition = 0.5
 	naval_attrition = -0.125
 }
@@ -102,8 +122,8 @@ ven_port_araby = {
 	local_ship_cost = -0.25
 }
 ven_la_serenissima_modifier = {
-	province_trade_power_modifier = 0.15
-	local_state_maintenance_modifier = -0.2
+	local_production_efficiency = 0.10
+	local_state_maintenance_modifier = -0.5
 }
 ven_increased_glass_production = {
 	trade_goods_size_modifier = 0.15

@@ -48,7 +48,7 @@ nap_spyce_trade = {
 	ship_recruit_speed = -0.25 
 	local_ship_cost = -0.2
 }
-nap_controller_trade = {
+nap_commissioni_marittime = {
 	trade_efficiency = 0.1
 	global_trade_goods_size_modifier = 0.1
 }
@@ -91,10 +91,9 @@ nap_lighthouse_otranto = {
 	province_trade_power_modifier = 0.10
 	province_trade_power_value = 0.5
 }
-nap_tyrrenean_road = {
-	regiment_recruit_speed = -0.25 
-	local_friendly_movement_speed = 0.25
-	supply_limit_modifier = 0.25
+nap_le_castella = {
+	local_defensiveness = 0.15
+	ship_recruit_speed = -10
 }
 
 #Event

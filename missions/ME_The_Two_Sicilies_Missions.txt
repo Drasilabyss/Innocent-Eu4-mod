@@ -7,9 +7,7 @@ the_two_sicilies_mission_1_NAP = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = NAP
-				}
+				was_tag = NAP
 			}
 			AND = {
 				tag = ITA
@@ -192,9 +190,7 @@ the_two_sicilies_mission_1_SIC = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = SIC
-				}
+				was_tag = SIC
 			}
 			AND = {
 				tag = ITA
@@ -377,9 +373,7 @@ the_two_sicilies_mission_2_NAP = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = NAP
-				}
+				was_tag = NAP
 			}
 			AND = {
 				tag = ITA
@@ -498,9 +492,7 @@ the_two_sicilies_mission_2_SIC = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = SIC
-				}
+				was_tag = SIC
 			}
 			AND = {
 				tag = ITA
@@ -619,9 +611,7 @@ the_two_sicilies_mission_3_NAP = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = NAP
-				}
+				was_tag = NAP
 			}
 			AND = {
 				tag = ITA
@@ -763,9 +753,7 @@ the_two_sicilies_mission_3_SIC = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = SIC
-				}
+				was_tag = SIC
 			}
 			AND = {
 				tag = ITA
@@ -913,9 +901,7 @@ the_two_sicilies_missions_4_NAP = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = NAP
-				}
+				was_tag = NAP
 			}
 			AND = {
 				tag = ITA
@@ -1075,9 +1061,7 @@ the_two_sicilies_missions_4_SIC = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = SIC
-				}
+				was_tag = SIC
 			}
 			AND = {
 				tag = ITA
@@ -1239,9 +1223,7 @@ the_two_sicilies_mission_5_NAP = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = NAP
-				}
+				was_tag = NAP
 			}
 			AND = {
 				tag = ITA
@@ -1310,9 +1292,7 @@ the_two_sicilies_mission_5_SIC = {
 		OR = {
 			AND = {
 				tag = TTS
-				OR = {
-					was_tag = SIC
-				}
+				was_tag = SIC
 			}
 			AND = {
 				tag = ITA

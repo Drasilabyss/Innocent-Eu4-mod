@@ -1060,7 +1060,7 @@ naples_missions_3 = {
 		}
 	}
 
-	nap_ruling_trade = {
+	nap_mercantile_navy = {
 		icon = me_mission_venice_small_ship_in_port
 		required_missions = {
 			nap_ottoman_domain
@@ -1096,7 +1096,7 @@ naples_missions_3 = {
 		effect = {
 			add_mercantilism = 10
 			add_country_modifier = {
-				name = nap_controller_trade
+				name = nap_commissioni_marittime
 				duration = 18250
 			}
 		}
@@ -1106,7 +1106,7 @@ naples_missions_3 = {
 		icon = unite_the_two_sicilies
 		required_missions = {
 			nap_provinces_africa
-			nap_ruling_trade
+			nap_mercantile_navy
 			nap_conquest_constantinople
 		}
 		position = 9

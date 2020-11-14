@@ -23,7 +23,7 @@ venice_missions_1 = {
 	ven_port_of_barcelona = {
 		icon = mission_raid_christian_trade
 		required_missions = {	
-			ven_venetian_navy 
+			ven_armada 
 		}
 		position = 2
 		provinces_to_highlight = {
@@ -46,23 +46,49 @@ venice_missions_1 = {
 			}
 		}
 		effect = {
-			add_legitimacy_equivalent = { value = 3 }
 			213 = {
 				add_province_modifier = {
-					name = ven_venetian_trade_practices_modifier
-					duration = 7300
+					name = ven_venetian_spanish_mastery
+					duration = 9125
 				}
 			}
 			220 = {
 				add_province_modifier = {
-					name = ven_venetian_trade_practices_modifier
-					duration = 7300
+					name = ven_venetian_spanish_mastery
+					duration = 9125
 				}
 			}
 			2988 = {
 				add_province_modifier = {
-					name = ven_venetian_trade_practices_modifier
-					duration = 7300
+					name = ven_venetian_spanish_mastery
+					duration = 9125
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Res Publica"
+				}
+				if = {
+					limit = {
+						faction_in_power = mr_traders
+					}
+					random_list = {
+						33 = {
+							213 = {
+								create_or_add_center_of_trade_level = { level = 1 }
+							}
+						}
+						33 = {
+							220 = {
+								create_or_add_center_of_trade_level = { level = 1 }
+							}
+						}
+						33 = {
+							2988 = {
+								create_or_add_center_of_trade_level = { level = 1 }
+							}							
+						}
+					}
 				}
 			}
 		}
@@ -151,7 +177,6 @@ venice_missions_1 = {
 				}
 			}
 			else = {
-				add_dip_power = 75
 				apulia_area = {
 					limit = {
 						NOT = { owned_by = ROOT }
@@ -206,20 +231,27 @@ venice_missions_1 = {
 	ven_discover_india_routes = {
 		icon = control_the_means_of_transaction
 		position = 5
-		required_missions = { ven_domestic_timber }
+		required_missions = { ven_silk_port }
 		provinces_to_highlight = { }
 		trigger = {
 			OR = {
-				504 = { #gujurat
+				1335 = { #gujurat
 					has_merchant = ROOT
 				}
-				524 = { #coromandel
+				4346 = { #coromandel
 					has_merchant = ROOT
 				}
 			}
 		}
 		effect = {
-			add_years_of_income = 4
+			524 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = 25
+					power = 15
+					key = ven_discovered_trade_route
+				}
+			}
 		}
 	}
 	
@@ -390,7 +422,7 @@ venice_missions_2 = {
 	ven_mare_hadriaticum = {
 		icon = adriatic_access
 		required_missions = {
-			ven_venetian_navy
+			ven_armada
 		}
 		position = 2
 		trigger = {
@@ -401,9 +433,21 @@ venice_missions_2 = {
 		effect = {
 			add_legitimacy_equivalent = { value = 3 }
 			add_mercantilism = 5
-			add_country_modifier = {
-				name = ven_adriatic_monopoly
-				duration = 7300
+			137 = {
+				every_trade_node_member_province = {
+					add_province_modifier = {
+						name = ven_monopoio_adriatico
+						duration = 7300
+					}
+				}
+			}
+			east_adriatic_coast_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -498,7 +542,7 @@ venice_missions_2 = {
 						cost = 0
 					}
 				}
-				add_base_prduction = 2
+				add_base_production = 2
 				add_nationalism = -5
 			}
 			aleppo_area = {
@@ -529,9 +573,38 @@ venice_missions_2 = {
 		required_missions = { ven_discover_india_routes }
 		provinces_to_highlight = { }
 		trigger = {
+			num_of_owned_provinces_with = {
+				value = 1
+				area = malabar_area
+			}
 		}
 		effect = {
-			add_years_of_income = 4
+			malabar_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					has_port = yes
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					has_dlc = "Res Publica"
+				}
+				if = {
+					limit = {
+						faction_in_power = mr_traders
+					}
+					random_owned_province = {
+						limit = {
+							area = malabar_area
+						}
+						light_ship = ROOT
+						light_ship = ROOT
+						light_ship = ROOT
+					}
+				}
+			}
 		}
 	}
 
@@ -594,7 +667,7 @@ venice_missions_2 = {
 		effect = {
 			add_years_of_income = 0.33
 			add_country_modifier = {
-				name = ven_house_of_visconti_modifier
+				name = ven_victory_over_milan
 				duration = 9125
 			}
 		}
@@ -623,7 +696,7 @@ venice_missions_3 = {
 	}
 	has_country_shield = yes
 
-	ven_venetian_navy = {
+	ven_armada = {
 		icon = mission_establish_high_seas_navy
 		required_missions = { }
 		position = 1
@@ -668,7 +741,7 @@ venice_missions_3 = {
 	ven_a_rival_port = {
 		icon = end_genoese_competition
 		required_missions = {
-			ven_venetian_navy
+			ven_armada
 		}
 		position = 2
 		provinces_to_highlight = {
@@ -739,13 +812,20 @@ venice_missions_3 = {
 				name = ven_genoan_monopoly
 				duration = 7300
 			}
+			crimea_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 
 	ven_crimean_goods = {
 		icon = purely_for_commerce
 		required_missions = {
-			ven_aegean_sea
+			ven_a_second_home
 		}
 		position = 4
 		provinces_to_highlight = {
@@ -781,44 +861,54 @@ venice_missions_3 = {
 				duration = 9125
 			}
 			286 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}
 			325 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}
 			328 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}
 			330 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}
 			1756 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
 				}
 				add_permanent_claim = ROOT
 			}
 		}
 	}
 	
-	ven_mare_nostrum = {
+	ven_stato_da_mar = {
 		icon = me_mission_venice_small_ship_in_port
 		required_missions = {
 			ven_silk_port
@@ -853,7 +943,8 @@ venice_missions_3 = {
 		position = 7
 		required_missions = {
 			ven_spice_trade_investments
-			ven_mare_nostrum
+			ven_stato_da_mar
+			ven_door_india
 		}
 		provinces_to_highlight = {
 			trade_goods = spices
@@ -874,6 +965,23 @@ venice_missions_3 = {
 			add_country_modifier = {
 				name = ven_spice_dominion
 				duration = -1
+			}
+			535 = {
+				if = {
+					limit = {
+						has_dlc = "Res Publica"
+					}
+					add_permanent_province_modifier = {
+						name = ven_venesia_india_rp
+						duration = -1
+					}
+				}
+				else = {
+					add_permanent_province_modifier = {
+						name = ven_venesia_india
+						duration = -1
+					}
+				}
 			}
 			country_event = {
 				id = ME_Venice_Events.14
@@ -1001,7 +1109,7 @@ venice_missions_4 = {
 	ven_prelude_to_bosporus = {
 		icon = dalmatian_conquest
 		required_missions = {
-			ven_venetian_navy
+			ven_armada
 		}
 		position = 2
 		trigger = {
@@ -1041,13 +1149,6 @@ venice_missions_4 = {
 			add_country_modifier = {
 				name = ven_bosphorus_preparations
 				duration = 3650
-			}
-			east_adriatic_coast_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
 			}
 			151 = {
 				if = {
@@ -1111,7 +1212,6 @@ venice_missions_4 = {
 			OR = {
 				AND = {
 					area = delta_area
-					NOT = { alliance_with = MAM }
 					NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				}
 				AND = {
@@ -1171,6 +1271,59 @@ venice_missions_4 = {
 			}
 			country_event = {
 				id = ME_Venice_Events.17
+			}
+		}
+	}
+
+	ven_door_india = {
+		icon = reclaim_the_ducal_lands
+		required_missions = {
+			ven_red_shores
+		}
+		position = 6
+		provinces_to_highlight = {
+
+		}
+		trigger = {
+			owns_core_province = 388
+			num_of_owned_provinces_with = {
+				value = 3
+				OR = {
+					area = tihama_al_yemen_area
+					area = aussa_area
+					area = yemen_area
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ven_expedition_boost
+				duration = 9125
+			}
+			388 = {
+				add_nationalism = -5
+				if = {
+					limit = {
+						NOT = { has_building = shipyard }
+					}
+					add_building_construction = {
+						building = shipyard
+						speed = 0.5
+						cost = 0
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = { has_building = grand_shipyard }
+					}
+					remove_building = shipyard
+					add_building_construction = {
+						building = grand_shipyard
+						speed = 0.5
+						cost = 0
+					}
+				}
+				else = { add_base_production = 4 }
 			}
 		}
 	}
@@ -1266,16 +1419,20 @@ venice_missions_4 = {
 		effect = {
 			if = {
 				limit = {
-					government = monarchy
+					FER = {
+						vassal_of = ROOT
+					}
 				}
-				add_legitimacy = 10
-			}
-			else = {
-				add_legitimacy_equivalent = { value = 3 }
+				FER = {
+					add_country_modifier = {
+						name = ven_vicedominus_ferrarie
+						duration = 9125
+					}
+				}
 			}
 			emilia_romagna_area = {
 				add_province_modifier = {
-					name = ven_venetian_trade_practices_modifier
+					name = ven_visdomio_veneziano
 					duration = 7300
 				}
 				if = {
@@ -1290,9 +1447,6 @@ venice_missions_4 = {
 					}
 					else = {
 						add_devastation = -3
-						add_base_tax = 1
-						add_base_production = 1
-						add_base_manpower = 1
 					}
 				}
 			}
@@ -1325,7 +1479,7 @@ venice_missions_5 = {
 	ven_protect_venetokratia = {
 		icon = fortify_malta
 		required_missions = {
-			ven_venetian_navy
+			ven_armada
 		}
 		position = 2
 		provinces_to_highlight = {
@@ -1534,7 +1688,7 @@ venice_missions_5 = {
 					limit = {
 						NOT = { has_building = grand_shipyard }
 					}
-					ramove_building = shipyard
+					remove_building = shipyard
 					add_building_construction = {
 						building = grand_shipyard
 						speed = 0.5

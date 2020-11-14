@@ -1,50 +1,17 @@
-lombardy_venetia_missions_2 = {
-	slot = 2
+LVE_MLO_missions_1 = {
+	slot = 1
 	generic = no
 	ai = yes
 	potential = {
-		tag = LVN
-		OR = {
-			was_tag = MLO
-			was_tag = VEN
-		}
-		OR = {
-			NOT = { has_dlc = "Emperor" }
-			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
-			}
-		}
-	}
-	has_country_shield = yes
-}
-
-lombardy_venetia_missions_3_MLO = {
-	slot = 3
-	generic = no
-	ai = yes
-	potential = {
-		OR = {
-			tag = MLO
-			AND = {
-				was_tag = MLO
-				tag = LVN
-			}
-		}
-		OR = {
-			NOT = { has_dlc = "Emperor" }
-			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
-			}
-		}
+		was_tag = MLO
+		tag = LVE
 	}
 	has_country_shield = yes
 
-	LVN_united_crowns = {
+	lve_mlo_united_crowns = {
 		icon = mission_monarch_in_throne_room
 		required_missions = { }
-		position = 11
+		position = 14
 		trigger = {
 			OR = {					
 				has_opinion = {
@@ -69,32 +36,20 @@ lombardy_venetia_missions_3_MLO = {
 	}
 }
 
-lombardy_venetia_missions_3_VEN = {
-	slot = 3
+LVE_MLO_missions_2 = {
+	slot = 2
 	generic = no
 	ai = yes
 	potential = {
-		OR = {
-			tag = VEN
-			AND = {
-				was_tag = VEN
-				tag = LVN
-			}
-		}
-		OR = {
-			NOT = { has_dlc = "Emperor" }
-			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
-			}
-		}
-	}
+		was_tag = MLO
+		tag = LVE
+	}	
 	has_country_shield = yes
 
-	LVN_united_crowns = {
+	lve_mlo_united_crowns = {
 		icon = mission_monarch_in_throne_room
-		required_missions = { ven_stato_terra }
-		position = 11
+		required_missions = { }
+		position = 14
 		trigger = {
 			OR = {					
 				has_opinion = {
@@ -110,52 +65,315 @@ lombardy_venetia_missions_3_VEN = {
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = lvn_lion_snake
-				duration = -1
+			VEN = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
 			}
 		}
 	}
 }
 
-lombardy_venetia_missions_3 = {
+LVE_MLO_missions_3 = {
 	slot = 3
 	generic = no
 	ai = yes
 	potential = {
-		tag = LVN
-		OR = {
-			was_tag = MLO
-			was_tag = VEN
+		was_tag = MLO
+		tag = LVE
+	}	
+	has_country_shield = yes
+
+	lve_mlo_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = VEN
+					value = 150
+				}
+				VEN = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
 		}
-		OR = {
-			NOT = { has_dlc = "Emperor" }
-			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+		effect = {
+			VEN = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
 			}
 		}
 	}
-	has_country_shield = yes
 }
 
-lombardy_venetia_missions_4 = {
+LVE_MLO_missions_4 = {
 	slot = 4
 	generic = no
 	ai = yes
 	potential = {
-		tag = LVN
-		OR = {
-			was_tag = MLO
-			was_tag = VEN
+		was_tag = MLO
+		tag = LVE
+	}	
+	has_country_shield = yes
+
+	lve_mlo_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = VEN
+					value = 150
+				}
+				VEN = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
 		}
-		OR = {
-			NOT = { has_dlc = "Emperor" }
-			AND = {
-				has_dlc = "Emperor"
-				has_country_flag = use_missions_expanded_missions_instead_of_paradox
+		effect = {
+			VEN = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
 			}
 		}
 	}
+}
+
+LVE_MLO_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		was_tag = MLO
+		tag = LVE
+	}	
 	has_country_shield = yes
+
+	lve_mlo_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = VEN
+					value = 150
+				}
+				VEN = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
+		}
+		effect = {
+			VEN = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
+			}
+		}
+	}
+}
+
+LVE_VEN_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		was_tag = VEN
+		tag = LVE
+	}	
+	has_country_shield = yes
+
+	lve_ven_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = MLO
+					value = 150
+				}
+				MLO = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
+		}
+		effect = {
+			MLO = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
+			}
+		}
+	}
+}
+
+LVE_VEN_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		was_tag = VEN
+		tag = LVE
+	}	
+	has_country_shield = yes
+
+	lve_ven_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = MLO
+					value = 150
+				}
+				MLO = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
+		}
+		effect = {
+			MLO = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
+			}
+		}
+	}
+}
+
+LVE_VEN_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		was_tag = VEN
+		tag = LVE
+	}	
+	has_country_shield = yes
+
+	lve_ven_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = MLO
+					value = 150
+				}
+				MLO = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
+		}
+		effect = {
+			MLO = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
+			}
+		}
+	}
+}
+
+LVE_VEN_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		was_tag = VEN
+		tag = LVE
+	}	
+	has_country_shield = yes
+
+	lve_ven_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = MLO
+					value = 150
+				}
+				MLO = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
+		}
+		effect = {
+			MLO = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
+			}
+		}
+	}
+}
+
+LVE_VEN_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		was_tag = VEN
+		tag = LVE
+	}	
+	has_country_shield = yes
+
+	lve_ven_united_crowns = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { }
+		position = 14
+		trigger = {
+			OR = {					
+				has_opinion = {
+					who = MLO
+					value = 150
+				}
+				MLO = {
+					num_of_owned_provinces_with = {
+						value = 0
+						region = italy_region
+					}
+				}
+			}
+		}
+		effect = {
+			MLO = {
+				country_event = {
+					id = ME_Lombardy_Venetia_Events.1
+				}
+			}
+		}
+	}
 }
