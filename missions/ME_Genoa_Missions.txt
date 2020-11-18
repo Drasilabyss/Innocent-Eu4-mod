@@ -147,7 +147,7 @@ genoa_missions_1 = {
 	}
 	
 	gen_reign_in_crimea = {
-		icon = mission_cannons_firing
+		icon = mission_dominate_genoa
 		required_missions = { gen_theodoro }
 		position = 5
 		provinces_to_highlight = {
@@ -222,7 +222,7 @@ genoa_missions_1 = {
 	}
 	
 	gen_gibraltar = {
-		icon = mission_galleys_in_port
+		icon = conquer_malacca
 		required_missions = { gen_tangiers }
 		position = 10
 		provinces_to_highlight = {
@@ -244,7 +244,7 @@ genoa_missions_1 = {
 	}
 	
 	gen_port_panama = {
-		icon = mission_dominate_home_trade_node
+		icon = mission_rb_scottish_the_darien_scheme
 		required_missions = { gen_another_route_india }
 		position = 11
 		provinces_to_highlight = {
@@ -282,7 +282,7 @@ genoa_missions_2 = {
 	has_country_shield = yes
 	
 	gen_mighty_fleet = {
-		icon = mission_establish_high_seas_navy
+		icon = overshadow_venice
 		required_missions = { }
 		position = 1
 		trigger = {
@@ -388,7 +388,7 @@ genoa_missions_2 = {
 	}
 	
 	gen_theodoro = {
-		icon = mission_cannons_firing
+		icon = dalmatian_conquest
 		required_missions = {
 			gen_genoese_colonies
 		}
@@ -454,7 +454,7 @@ genoa_missions_2 = {
 	}
 
 	gen_wealth_orient = {
-		icon = kingdom_of_cyprus
+		icon = purely_for_commerce
 		required_missions = {
 			gen_levant_trade
 		}
@@ -488,7 +488,7 @@ genoa_missions_2 = {
 	}
 
 	gen_traders_steppes = {
-		icon = mission_galleys_in_port
+		icon = mission_asian_trader
 		required_missions = { }
 		position = 7
 		trigger = {
@@ -543,7 +543,7 @@ genoa_missions_2 = {
 	}
 	
 	gen_westward = {
-		icon = mission_monarch_in_throne_room
+		icon = me_mission_venice_navy
 		required_missions = { }
 		position = 8
 		trigger = {
@@ -565,7 +565,7 @@ genoa_missions_2 = {
 	}
 	
 	gen_tangiers = {
-		icon = mission_dominate_home_trade_node
+		icon = control_the_means_of_transaction
 		required_missions = { gen_westward }
 		position = 9
 		provinces_to_highlight = {
@@ -596,7 +596,7 @@ genoa_missions_2 = {
 	}
 	
 	gen_another_route_india = {
-		icon = mission_dominate_home_trade_node
+		icon = mission_establish_high_seas_navy
 		required_missions = { gen_tangiers }
 		position = 10
 		provinces_to_highlight = {
@@ -611,7 +611,7 @@ genoa_missions_2 = {
 	}
 
 	gen_cape_good_hope = {
-		icon = mission_galleys_in_port
+		icon = colonize_the_cape
 		required_missions = {
 			gen_another_route_india
 		}
@@ -627,7 +627,7 @@ genoa_missions_2 = {
 	}
 
 	gen_spice_venture = {
-		icon = mission_galleys_in_port
+		icon = sources_of_trade
 		required_missions = {
 			gen_cape_good_hope
 		}
@@ -643,7 +643,7 @@ genoa_missions_2 = {
 	}
 
 	gen_traders_asia = {
-		icon = mission_galleys_in_port
+		icon = the_shape_of_trades_to_come
 		required_missions = {
 			gen_spice_venture
 		}
@@ -694,7 +694,7 @@ genoa_missions_3 = {
 	has_country_shield = yes
 
 	gen_la_superba = {
-		icon = mission_invade_island
+		icon = secure_the_republic
 		required_missions = { }
 		position = 1
 		provinces_to_highlight = { }
@@ -714,7 +714,7 @@ genoa_missions_3 = {
 	}
 
 	gen_doge_dominion = {
-		icon = mission_galleys_in_port
+		icon = mission_raid_on_venice
 		required_missions = {
 			gen_mighty_fleet
 			gen_la_superba
@@ -827,7 +827,7 @@ genoa_missions_3 = {
 	}
 	
 	gen_alexandria = {
-		icon = mission_assemble_an_army
+		icon = fortify_malta
 		required_missions = { gen_italian_trade }
 		position = 5
 		provinces_to_highlight = {
@@ -849,7 +849,7 @@ genoa_missions_3 = {
 	}
 
 	gen_trading_egypt = {
-		icon = mission_assemble_an_army
+		icon = mission_colonize_the_west
 		required_missions = { gen_alexandria }
 		position = 6
 		provinces_to_highlight = {
@@ -871,7 +871,7 @@ genoa_missions_3 = {
 	}
 
 	gen_mare_nostrum = {
-		icon = mission_assemble_an_army
+		icon = reform_the_monte
 		required_missions = {
 			gen_wealth_orient
 			gen_trading_egypt
@@ -897,7 +897,7 @@ genoa_missions_3 = {
 	}
 	
 	gen_nice = {
-		icon = mission_conquer_50_development
+		icon = unify_piedmont
 		required_missions = { gen_merchant_army }
 		position = 10
 		provinces_to_highlight = {
@@ -919,17 +919,6 @@ genoa_missions_3 = {
 					add_permanent_claim = ROOT
 				}
 			}
-			if = {
-				limit = {
-					exists = SAV
-					NOT = { overlord_of = SAV }
-				}
-				add_casus_belli = {
-					target = SAV
-					type = cb_annex
-					months = 240
-				}
-			}
 			102 = {
 				add_local_autonomy = -25
 				add_nationalism = -10
@@ -938,7 +927,7 @@ genoa_missions_3 = {
 	}
 	
 	gen_conquer_piedmont = {
-		icon = mission_have_two_subjects
+		icon = glory_to_turin
 		required_missions = { gen_nice }
 		position = 11
 		provinces_to_highlight = {
@@ -1037,7 +1026,7 @@ genoa_missions_4 = {
 	}
 	
 	gen_take_back_whats_ours = {
-		icon = mission_invade_island
+		icon = seize_sardinia
 		required_missions = {
 			gen_tyrrenean_hegemony
 		}
@@ -1058,7 +1047,7 @@ genoa_missions_4 = {
 	}
 
 	gen_tyrrenean_wood = {
-		icon = mission_invade_island
+		icon = mission_sea_battles
 		required_missions = {
 			gen_take_back_whats_ours
 			gen_tyrrenean_islands
@@ -1086,7 +1075,7 @@ genoa_missions_4 = {
 	}
 	
 	gen_trade_trouble_tunis = {
-		icon = mission_dominate_home_trade_node
+		icon = personal_diplomacy
 		required_missions = { gen_italian_trade }
 		position = 5
 		provinces_to_highlight = {
@@ -1126,7 +1115,7 @@ genoa_missions_4 = {
 	}
 	
 	gen_tripoli = {
-		icon = mission_arabian_fort
+		icon = mission_occupy_alexandria
 		required_missions = { gen_trade_trouble_tunis }
 		position = 6
 		provinces_to_highlight = {
@@ -1148,7 +1137,7 @@ genoa_missions_4 = {
 	}
 	
 	gen_merchant_army = {
-		icon = mission_assemble_an_army
+		icon = military_self_reliance
 		required_missions = { }
 		position = 9
 		trigger = {
@@ -1156,39 +1145,6 @@ genoa_missions_4 = {
 			num_of_generals = 1
 		}
 		effect = {
-			if = {
-				limit = {
-					exists = MLO
-					NOT = { overlord_of = MLO }
-				}
-				add_casus_belli = {
-					target = MLO
-					type = cb_annex
-					months = 240
-				}
-			}
-			if = {
-				limit = {
-					exists = LUC
-					NOT = { overlord_of = LUC }
-				}
-				add_casus_belli = {
-					target = LUC
-					type = cb_annex
-					months = 240
-				}
-			}
-			if = {
-				limit = {
-					exists = SAV
-					NOT = { overlord_of = SAV }
-				}
-				add_casus_belli = {
-					target = SAV
-					type = cb_annex
-					months = 240
-				}
-			}
 			2980 = {
 				if = {
 					limit = {
@@ -1224,7 +1180,7 @@ genoa_missions_4 = {
 	}
 	
 	gen_rout_tuscans = {
-		icon = mission_assemble_an_army
+		icon = reclaim_the_ducal_lands
 		required_missions = { gen_merchant_army }
 		position = 11
 		provinces_to_highlight = {
@@ -1247,7 +1203,7 @@ genoa_missions_4 = {
 	}
 	
 	gen_reign_in_italy = {
-		icon = mission_unite_home_region
+		icon = expand_the_terraferma
 		required_missions = { gen_defeat_milan gen_conquer_piedmont gen_rout_tuscans }
 		position = 12
 		provinces_to_highlight = {
@@ -1299,7 +1255,7 @@ genoa_missions_5 = {
 	has_country_shield = yes
 
 	gen_market_dominance = {
-		icon = mission_invade_island
+		icon = medici_bank_ledgers
 		required_missions = {
 		}
 		position = 1
@@ -1311,7 +1267,7 @@ genoa_missions_5 = {
 	}
 
 	gen_anziani_ruling = {
-		icon = mission_dominate_home_trade_node
+		icon = pulverize_pisa
 		required_missions = {
 			gen_market_dominance
 		}
@@ -1336,7 +1292,7 @@ genoa_missions_5 = {
 	}
 
 	gen_tyrrenean_islands = {
-		icon = mission_dominate_home_trade_node
+		icon = invest_in_the_rich_trades
 		required_missions = {
 			gen_tyrrenean_hegemony
 			gen_anziani_ruling
@@ -1360,7 +1316,7 @@ genoa_missions_5 = {
 	}
 
 	gen_pine_islands = {
-		icon = mission_invade_island
+		icon = a_question_of_spain
 		required_missions = {
 			gen_tyrrenean_wood
 			gen_tyrrenean_islands
@@ -1399,6 +1355,14 @@ genoa_missions_5 = {
 		}
 		trigger = {
 			1882 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2455 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			1882 = {
 				add_province_modifier = {
 					name = gen_genoese_fortress
 					duration = 5475
@@ -1414,7 +1378,7 @@ genoa_missions_5 = {
 	}
 	
 	gen_acquire_parma = {
-		icon = mission_cannons_firing
+		icon = ansbach_succession
 		required_missions = { gen_merchant_army }
 		position = 10
 		provinces_to_highlight = {
@@ -1434,17 +1398,6 @@ genoa_missions_5 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			if = {
-				limit = {
-					exists = MLO
-					NOT = { overlord_of = MLO }
-				}
-				add_casus_belli = {
-					target = MLO
-					type = cb_annex
-					months = 240
-				}
-			}
 			105 = {
 				add_local_autonomy = -25
 				add_nationalism = -10
@@ -1453,7 +1406,7 @@ genoa_missions_5 = {
 	}
 	
 	gen_defeat_milan = {
-		icon = mission_build_up_to_force_limit
+		icon = seize_lombardy
 		required_missions = { gen_acquire_parma }
 		position = 11
 		provinces_to_highlight = {

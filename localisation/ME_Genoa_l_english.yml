@@ -57,6 +57,8 @@
  gen_nice_desc: "Our neighbors in Savoy do not acctively participate in trade as we do, and thus have no need for the por city of Niza. We should take if off of their hands for the benefit of both nations, solidifying our hold in Northern Italy and relieving them of the burdern of governance."
  gen_conquer_piedmont_title: "Conquer Piedmont"
  gen_conquer_piedmont_desc: "We have an open flank where Piedmont resides. We should probably do something about this before it comes back and bites us in the rear."
+ gen_conquest_of_rome_title: "Conquest of Rome"
+ gen_conquest_of_rome_desc: "Founded according to tradition on April 21, 753 BC (although recent excavations in Lapis niger would date the foundation back to 2 centuries earlier), during its three millennia of history it was the first metropolis of humanity, the beating heart of one of the most important ancient civilizations, which influenced society, the culture, language, literature, art, architecture, philosophy, religion, law and customs of the following centuries. Place of origin of the Latin language, it was the capital of the Roman Empire which extended its dominion over the whole Mediterranean basin and most of Europe, the Papal States, subjected to the temporal power of the popes and the future Kingdom of Italy. By definition, Rome, Caput Mundi and Eternal City are defined. Its historic center, delimited by the perimeter of the Aurelian walls, overlapping of testimonies of almost three millennia, is an expression of the historical, artistic and cultural heritage of the western European world."
 
  #4
  gen_anziani_ruling_title: "The Anziani's Ruling"
