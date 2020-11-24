@@ -1,0 +1,26 @@
+namespace = ME_Genoa_Events
+
+country_event = {
+	id = ME_Genoa_Events.
+	title = ME_Genoa_Events..T
+	desc = ME_Genoa_Events..D
+
+	is_triggered_only = yes
+
+	option = {
+		name = ME_Genoa_Events..OPT1
+
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events..OPT2
+
+		ai_chance = {
+			factor = 50
+		}
+	}
+	
+}
