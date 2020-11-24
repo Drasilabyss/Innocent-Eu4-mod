@@ -226,7 +226,6 @@ corsica_missions_3 = {
 					attacker_leader = ROOT
 					casus_belli = cb_independence_war
 				}
-				is_vassal = no
 			}
 		}
 		effect = {
