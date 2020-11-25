@@ -1,5 +1,616 @@
 namespace = ME_Genoa_Events
 
+#Andrea Doria
+country_event = {
+	id = ME_Genoa_Events.1
+	title = ME_Genoa_Events.1.T
+	desc = ME_Genoa_Events.1.D
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ME_Genoa_Events.1.OPT1
+
+		ai_chance = {
+			factor = 50
+		}
+
+		define_advisor = {
+			type = naval_reformer
+			name = "Andrea Doria"
+			skill = 2
+			culture = ligurian
+			cost_multiplier = 0.50
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.1.OPT2
+
+		ai_chance = {
+			factor = 50
+		}
+
+		define_admiral = {
+			fire = 3
+			shock = 2
+			manuever = 4
+			siege = 1
+			name = "Andrea Doria"
+			trait = ram_raider_personality
+		}
+	}
+	
+}
+
+#Sardinia Ruling
+country_event = {
+	id = ME_Genoa_Events.2
+	title = ME_Genoa_Events.2.T
+	desc = ME_Genoa_Events.2.D
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ME_Genoa_Events.2.OPT1
+
+		ai_chance = {
+			factor = 50
+		}
+
+		corsica_sardinia_area = {
+			limit = {
+				NOT = { is_core = SAR }
+			}
+			add_core = SAR
+		}
+		release = SAR
+		SAR = {
+			change_government = monarchy
+			set_capital = 127
+			hidden_effect = {
+				change_religion = FROM
+				add_treasury = 20
+				add_yearly_manpower = 10
+				add_yearly_sailors = 10
+			}
+		}
+		if = {
+			limit = {
+				is_expanded_mod_active = { mod = subjects }
+				can_create_subject_type = {
+					subject = ROOT
+					subject_type = naval_march
+				}
+			}
+			create_subject = {
+				subject_type = naval_march
+				subject = SAR
+			}
+		}
+		else = {
+			create_subject = {
+				subject_type = march
+				subject = SAR
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.2.OPT2
+
+		ai_chance = {
+			factor = 50
+		}
+		
+		corsica_sardinia_area = {
+			limit = {
+				NOT = { is_core = ROOT }
+			}
+			add_nationalism = 5
+		}
+	}	
+}
+
+#Strait of Gibraltar
+country_event = {
+	id = ME_Genoa_Events.3
+	title = ME_Genoa_Events.3.T
+	desc = ME_Genoa_Events.3.D
+	picture = TRADEGOODS_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		owns = 334
+		religion = catholic
+		exists = GEN
+	}
+
+	mean_time_to_happen = {
+		years = 1
+	}
+
+	option = {
+		name = ME_Genoa_Events.3.OPT1
+
+		ai_chance = {
+			factor = 100
+		}
+
+		add_country_modifier = {
+			name = gen_genoese_trade_agreement
+			duration = 10950
+		}
+		334 = {
+			galley = ROOT
+			galley = ROOT
+			galley = ROOT
+			if = {
+				limit = {
+					NOT = { is_core = GEN }
+				}
+				add_core = GEN
+			}
+			cede_province = GEN
+		}
+		GEN = {
+			add_opinion = {
+				who = ROOT
+				modifier = gen_accepted_treaty
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = gen_accepted_treaty
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.3.OPT2
+
+		ai_chance = {
+			factor = 1
+		}
+
+		GEN = {
+			add_opinion = {
+				who = ROOT
+				modifier = gen_refused_treaty
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = gen_refused_treaty
+			}
+		}
+	}
+	
+}
+
+#The Steppe's traders
+country_event = {
+	id = ME_Genoa_Events.4
+	title = ME_Genoa_Events.4.T
+	desc = ME_Genoa_Events.4.D
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ME_Genoa_Events.4.OPT1
+		trigger = {
+			hidden_trigger = {
+				AND = {
+					exists = RUS
+					RUS = {
+						NOT = { has_country_flag = steppe_traders_refused }
+					}
+				}
+				AND = {
+					exists = MOS
+					MOS = {
+						NOT = { has_country_flag = steppe_traders_refused }
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+		}
+
+		if = {
+			limit = {
+				exists = RUS
+			}
+			RUS = {
+				country_event = {
+					id = ME_Genoa_Events.5
+				days = 30
+				}
+			}
+		}
+		else = {
+			MOS = {
+				country_event = {
+					id = ME_Genoa_Events.5
+				days = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.4.OPT2
+		trigger = {
+			hidden_trigger = {
+				OR = {
+					AND = {
+						exists = GLH
+						GLH = {
+							NOT = { has_country_flag = steppe_traders_refused }
+						}
+					}
+					AND = {
+						exists = GHR
+						GHR = {
+							NOT = { has_country_flag = steppe_traders_refused }
+						}
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 49
+		}
+
+		if = {
+			limit = {
+				exists = GLH
+			}
+			GLH = {
+				country_event = {
+					id = ME_Genoa_Events.5
+				days = 30
+				}
+			}
+		}
+		else = {
+			GHR = {
+				country_event = {
+					id = ME_Genoa_Events.5
+				days = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.4.OPT3
+
+		ai_chance = {
+			factor = 1
+		}
+
+		add_stability_or_adm_power = yes
+	}
+	
+}
+
+country_event = {
+	id = ME_Genoa_Events.5
+	title = ME_Genoa_Events.5.T
+	desc = ME_Genoa_Events.5.D
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	major = yes
+
+	option = {
+		name = ME_Genoa_Events.5.OPT1
+
+		ai_chance = {
+			factor = 99
+		}
+
+		set_country_flag = gen_trade_steppe_trade_country
+		custom_tooltip = GEN_STEPPE_TRADE_AGGREEMENT_TT
+		create_alliance = FROM
+		FROM = {
+			add_trust = {
+				who = ROOT
+				value = 25
+				mutual = yes
+			}
+			add_years_of_income = 1
+			add_yearly_manpower = 1
+			add_country_modifier = {
+				name = gen_genoese_steppe_trade_aggreement_genoa
+				duration = -1
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = gen_accepted_treaty
+			}
+		}
+
+		add_country_modifier = {
+			name = gen_genoese_steppe_trade_aggreement_steppe
+			duration = -1
+		}
+		add_opinion = {
+			who = FROM
+			modifier = gen_accepted_treaty
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.5.OPT2
+
+		ai_chance = {
+			factor = 1
+		}
+
+		set_country_flag = steppe_traders_refused
+		add_stability_or_adm_power = yes
+		FROM = {
+			country_event = {
+				id = ME_Genoa_Events.4
+				days = 30
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = gen_refused_treaty
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = gen_refused_treaty
+		}
+	}
+}
+
+#Silk Road
+country_event = {
+	id = ME_Genoa_Events.6
+	title = ME_Genoa_Events.6.T
+	desc = ME_Genoa_Events.6.D
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ME_Genoa_Events.6.OPT1
+		trigger = {
+			hidden_trigger = {
+				410 = {
+					owner = {
+						NOT = { has_country_flag = sil_road_refused }
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+		}
+
+		410 = {
+			owner = {
+				country_event = {
+					id = ME_Genoa_Events.7
+					days = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.6.OPT2
+		trigger = {
+			hidden_trigger = {
+				428 = {
+					owner = {
+						NOT = { has_country_flag = sil_road_refused }
+						NOT = { owns = 410 }
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+		}
+
+		428 = {
+			owner = {
+				country_event = {
+					id = ME_Genoa_Events.7
+					days = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.6.OPT3
+		trigger = {
+			hidden_trigger = {
+				454 = {
+					owner = {
+						NOT = { has_country_flag = sil_road_refused }
+						NOT = { owns = 410 }
+						NOT = { owns = 428 }
+					}
+				}
+			}
+		}
+
+		ai_chance = {
+			factor = 50
+		}
+
+		454 = {
+			owner = {
+				country_event = {
+					id = ME_Genoa_Events.7
+					days = 30
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.6.OPT4
+
+		ai_chance = {
+			factor = 50
+		}
+
+		add_stability_or_adm_power = yes
+	}
+}
+
+#A Genoese Proposal
+country_event = {
+	id = ME_Genoa_Events.7
+	title = ME_Genoa_Events.7.T
+	desc = ME_Genoa_Events.7.D
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ME_Genoa_Events.7.OPT1
+
+		ai_chance = {
+			factor = 60
+		}
+
+		set_country_flag = gen_trade_silk_road_country
+		custom_tooltip = GEN_STEPPE_TRADE_AGGREEMENT_TT
+		create_alliance = FROM
+		FROM = {
+			add_trust = {
+				who = ROOT
+				value = 25
+				mutual = yes
+			}
+			add_country_modifier = {
+				name = gen_genoese_silk_road_trade_aggreement_genoa
+				duration = -1
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = gen_accepted_treaty
+			}
+		}
+
+		add_country_modifier = {
+			name = gen_genoese_silk_road_trade_aggreement_asiatic
+			duration = -1
+		}
+		add_opinion = {
+			who = FROM
+			modifier = gen_accepted_treaty
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.7.OPT2
+
+		ai_chance = {
+			factor = 40
+		}
+
+		set_country_flag = sil_road_refused
+		add_stability_or_adm_power = yes
+		FROM = {
+			country_event = {
+				id = MME_Genoa_Events.6
+				days = 30
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = gen_refused_treaty
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = gen_refused_treaty
+		}
+	}
+}
+
+#Hidden event to remove trading bonuses when alliance is broken
+country_event = {
+	id = ME_Genoa_Events.8
+	title = ME_Genoa_Events.8.T
+	desc = ME_Genoa_Events.8.D
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	hidden = yes
+	trigger = {
+		tag = GEN
+		OR = {
+			has_country_modifier = gen_genoese_steppe_trade_aggreement_genoa
+			has_country_modifier = gen_genoese_silk_road_trade_aggreement_genoa
+		}
+		OR = {
+			NOT = {
+				any_country = {
+					OR = {
+						has_country_flag = gen_trade_steppe_trade_country
+						has_country_flag = gen_trade_silk_road_country
+					}
+					alliance_with = GEN
+				}
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_flag = gen_trade_steppe_trade_country
+							alliance_with = GEN
+						}
+					}
+				}
+				random_country = {
+					limit = {
+						has_country_flag = gen_trade_steppe_trade_country
+					}
+					remove_country_modifier = gen_genoese_steppe_trade_aggreement_steppe
+				}
+				remove_country_modifier = gen_genoese_steppe_trade_aggreement_genoa
+			}
+			else = {
+				random_country = {
+					limit = {
+						has_country_flag = gen_trade_steppe_trade_country
+					}
+					remove_country_modifier = gen_genoese_silk_road_trade_aggreement_asiatic
+				}
+				remove_country_modifier = gen_genoese_silk_road_trade_aggreement_genoa
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.8.OPT1
+
+		ai_chance = {
+			factor = 50
+		}
+	}	
+}
+
 country_event = {
 	id = ME_Genoa_Events.
 	title = ME_Genoa_Events..T
