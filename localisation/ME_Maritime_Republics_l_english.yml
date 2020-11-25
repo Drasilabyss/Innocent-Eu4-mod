@@ -30,6 +30,16 @@
  ME_Maritime_Republics_Events.6.OPT1: "Possa Dio salvarli dalla mia ira"
  ME_Maritime_Republics_Events.6.OPT2: "Di tutto pur di salvare il mio popolo"
 
+ ME_Maritime_Republics_Events.7.T: "The Goods of Cyprus"
+ ME_Maritime_Republics_Events.7.D: "The formal annexation of the island of Cyprus has been a long time coming, with the various intertwining deals involving the Lusignan dynasty and the Republic. The territory has always been an excellent source of salt and grains to feed the homeland, but an debate has begun amongst the upper echelon of the Venetian bureaucracy on whether our efforts are better spent cultivating the fields or harvesting the salt pans. The Senate wishes to further our grip on the salt monopoly, while the Council of Ten wishes the focus on wheat exports to properly prepare for future shortages and famines."
+ ME_Maritime_Republics_Events.7.OPT1: "We need to keep that monopoly going!"
+ ME_Maritime_Republics_Events.7.OPT2: "Follow the Council. What good is money if you can't eat?"
+
+ ME_Maritime_Republics_Events.8.T: "Wealth of the Orient"
+ ME_Maritime_Republics_Events.8.D: "Our re-entry as a major player in the spice trade has brought with it all the wealth and riches one might expect. Tales of Venezia are told from near and far, describing the opulent structures, extravagant citizens, and bountiful lifestyles. This would harken back to the height of our Republic, but that time is now."
+ ME_Maritime_Republics_Events.8.OPT1: "A sight to behold!"
+ ME_Maritime_Republics_Events.8.OPT2: "A sight to behold!"
+
 #Deciscion
  maritime_republics_domestic_timber_sources_title: "Domestic Timber Sources"
  maritime_republics_domestic_timber_sources_desc: "Our reliance on foreign timber is a weakness to our very existence. Me must create or seize our own source of timber."
@@ -45,5 +55,11 @@
  mr_permanent_mercantile_fleet: "Permanent Mercantile Fleet"
  mr_permanent_fighting_fleet: "Permanent Fighting Fleet"
  mr_permanent_high_navy_fleet: "Permanent High Navy Fleet"
+ mr_saint_lazarus_salt: "Saint Lazarus Salt Pans"
+ mr_cypriot_grains: "Cypriot Grains"
+ mr_cypriot_grain_export: "Cypriot Grain Exports"
+ mr_wealth_orient: "Wealth of the Orient"
+ mr_spice_wealth_1: "Spice Leadership"
+ mr_spice_wealth_2: "Spice Leadership"
 
 #Tooltips

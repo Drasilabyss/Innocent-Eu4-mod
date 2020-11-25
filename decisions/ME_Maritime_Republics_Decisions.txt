@@ -123,19 +123,17 @@ country_decisions = {
 					}
 				}
 			}
-			OR = {
-				development_in_provinces = {
-					value = 30
-					trade_goods = naval_supplies
+			num_of_owned_provinces_with = {
+				value = 10
+				base_production = 10
+				OR = {
+					has_building = shipyard
+					has_building = grand_shipyard
 				}
-				trading_bonus = {
-					trade_goods = naval_supplies
-					value = yes
+				OR = {
+					has_building = dock
+					has_building = drydock
 				}
-			}
-			any_owned_province = {
-				trade_goods = naval_supplies
-				has_building = shipyard
 			}
 		}
 		effect = {

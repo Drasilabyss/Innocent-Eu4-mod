@@ -4,6 +4,28 @@ gen_genoese_naval_tactics = {
 	naval_maintenance_modifier = -0.10
 }
 #2
+gen_safe_crusading_port = {
+	local_monthly_devastation = -2
+	local_manpower_modifier = 0.10
+}
+gen_route_india = {
+	colonists = 1
+	range = 0.20
+}
+gen_colonial_expedition = {
+	native_uprising_chance = -0.25
+	global_colonial_growth = 20
+}
+gen_specie_indian = {
+	range = 0.20
+	global_trade_power = 0.20
+}
+gen_genoese_haven_dlc = {
+	province_trade_power_value = 10
+}
+gen_genoese_haven = {
+	province_trade_power_modifier = 0.33
+}
 gen_facing_doge = {
 	galley_power = 0.10
 	global_naval_engagement_modifier = 0.20
@@ -28,6 +50,12 @@ gen_anziani_fall = {
 }
 gen_frank_roman_trade_aggreement = {
 	province_trade_power_value = +5
+}
+
+#5
+gen_santa_maria_carignano = {
+	local_build_time = -0.10
+	local_institution_spread = 0.10
 }
 
 

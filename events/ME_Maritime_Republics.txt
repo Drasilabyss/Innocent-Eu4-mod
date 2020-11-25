@@ -201,7 +201,7 @@ country_event = {
 	}
 
 	option = {
-		name = ME_Maritime_Republics_Events.4.OPT2
+		name = ME_Maritime_Republics_Events.4.OPT3
 
 		ai_chance = {
 			factor = 33
@@ -303,14 +303,14 @@ country_event = {
 				}
 				VEN = {
 					country_event = {
-						id = ME_Maritime_Republics_Events.2
+						id = ME_Maritime_Republics_Events.6
 					}
 				}
 			}
 			else = {
 				PIS = {
 					country_event = {
-						id = ME_Maritime_Republics_Events.2
+						id = ME_Maritime_Republics_Events.6
 					}
 				}
 			}
@@ -325,14 +325,14 @@ country_event = {
 				}
 				GEN = {
 					country_event = {
-						id = ME_Maritime_Republics_Events.2
+						id = ME_Maritime_Republics_Events.6
 					}
 				}
 			}
 			else = {
 				PIS = {
 					country_event = {
-						id = ME_Maritime_Republics_Events.2
+						id = ME_Maritime_Republics_Events.6
 					}
 				}
 			}
@@ -344,14 +344,14 @@ country_event = {
 				}
 				GEN = {
 					country_event = {
-						id = ME_Maritime_Republics_Events.2
+						id = ME_Maritime_Republics_Events.6
 					}
 				}
 			}
 			else = {
 				VEN = {
 					country_event = {
-						id = ME_Maritime_Republics_Events.2
+						id = ME_Maritime_Republics_Events.6
 					}
 				}
 			}
@@ -401,6 +401,148 @@ country_event = {
 			}
 			else = {
 				vassalize = ROOT
+			}
+		}
+	}
+}
+
+country_event = { #The Goods of Cyprus
+	id = ME_Maritime_Republics_Events.7
+	title = ME_Maritime_Republics_Events.7.T
+	desc = ME_Maritime_Republics_Events.7.D
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ME_Maritime_Republics_Events.7.OPT1
+
+		321 = {
+			change_trade_goods = salt
+			add_province_modifier = {
+				name = mr_saint_lazarus_salt
+				duration = -1
+			}
+		}
+	}
+
+	option = {
+		name = ME_Maritime_Republics_Events.7.OPT2
+
+		321 = {
+			change_trade_goods = grain
+			add_province_modifier = {
+				name = mr_cypriot_grains
+				duration = -1
+			}
+			add_unrest = -1
+		}
+		add_country_modifier = {
+			name = mr_cypriot_grain_export
+			duration = 9125
+		}
+	}
+}
+
+country_event = { #Wealth of the Orient
+	id = ME_Maritime_Republics_Events.8
+	title = ME_Maritime_Republics_Events.8.T
+	desc = ME_Maritime_Republics_Events.8.D
+	picture = TRADE_GOODS_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ME_Maritime_Republics_Events.8.OPT1
+		ai_chance = {
+			factor = 50
+		}
+
+		if = {
+			limit = {
+				tag = VEN
+			}
+			112 = {
+				add_province_modifier = {
+					name = mr_wealth_orient
+					duration = -1
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				tag = GEN
+			}
+			101 = {
+				add_province_modifier = {
+					name = mr_wealth_orient
+					duration = -1
+				}
+			}
+		}
+		else = {
+			115 = {
+				add_province_modifier = {
+					name = mr_wealth_orient
+					duration = -1
+				}
+			}
+		}
+		
+		every_owned_province = {
+			limit = { trade_goods = spices }
+			add_province_modifier = {
+				name = mr_spice_wealth_1
+				duration = 7300
+			}
+		}
+	}
+
+	option = {
+		name = ME_Maritime_Republics_Events.8.OPT2
+		ai_chance = {
+			factor = 50
+		}
+
+		if = {
+			limit = {
+				tag = VEN
+			}
+			112 = {
+				add_province_modifier = {
+					name = mr_wealth_orient
+					duration = -1
+				}
+			}
+		}
+		else_if = {
+			limit = { 
+				tag = GEN
+			}
+			101 = {
+				add_province_modifier = {
+					name = mr_wealth_orient
+					duration = -1
+				}
+			}
+		}
+		else = {
+			115 = {
+				add_province_modifier = {
+					name = mr_wealth_orient
+					duration = -1
+				}
+			}
+		}
+		
+		random_owned_province = {
+			limit = {
+				trade_goods = spices
+			}
+			add_base_production = 2
+			add_province_modifier = {
+				name = mr_spice_wealth_2
+				duration = 7300
 			}
 		}
 	}
