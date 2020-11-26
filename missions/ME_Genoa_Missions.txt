@@ -878,7 +878,10 @@ genoa_missions_2 = {
 				name = gen_colonial_expedition
 				duration = 10950
 			}
-			west_africa_coast_area = {
+			west_african_sea_region = {
+				discover_country = ROOT
+			}
+			guinea_region = {
 				discover_country = ROOT
 			}
 		}
@@ -900,6 +903,7 @@ genoa_missions_2 = {
 			}
 		}
 		effect = {
+			custom_tooltip = GEN_COLONISING_TT
 			random_owned_province = {
 				limit = {
 					area = cape_of_good_hope_area
