@@ -201,16 +201,18 @@ country_event = {
 		name = ME_Genoa_Events.4.OPT1
 		trigger = {
 			hidden_trigger = {
-				AND = {
-					exists = RUS
-					RUS = {
-						NOT = { has_country_flag = steppe_traders_refused }
+				OR = {
+					AND = {
+						exists = RUS
+						RUS = {
+							NOT = { has_country_flag = steppe_traders_refused }
+						}
 					}
-				}
-				AND = {
-					exists = MOS
-					MOS = {
-						NOT = { has_country_flag = steppe_traders_refused }
+					AND = {
+						exists = MOS
+						MOS = {
+							NOT = { has_country_flag = steppe_traders_refused }
+						}
 					}
 				}
 			}
@@ -604,6 +606,50 @@ country_event = {
 
 	option = {
 		name = ME_Genoa_Events.8.OPT1
+
+		ai_chance = {
+			factor = 50
+		}
+	}	
+}
+
+country_event = {
+	id = ME_Genoa_Events.9
+	title = ME_Genoa_Events.9.T
+	desc = ME_Genoa_Events.9.D
+
+	fire_only_once = yes
+	hidden = yes
+
+	trigger = {
+		GEN = {
+			num_of_owned_provinces_with = {
+				value = 1
+				has_province_modifier = gen_frank_roman_trade_aggreement
+			}
+			NOT = { alliance_with = BYZ }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			GEN = { 
+				every_owned_province = {
+					limit = { has_province_modifier = gen_frank_roman_trade_aggreement }
+					remove_province_modifier = gen_frank_roman_trade_aggreement
+				}
+			}
+			BYZ = { 
+				every_owned_province = {
+					limit = { has_province_modifier = gen_frank_roman_trade_aggreement }
+					remove_province_modifier = gen_frank_roman_trade_aggreement
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ME_Genoa_Events.9.OPT1
 
 		ai_chance = {
 			factor = 50
