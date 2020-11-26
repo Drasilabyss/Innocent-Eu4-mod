@@ -41,7 +41,7 @@ country_event = {
 			trait = ram_raider_personality
 		}
 	}
-	
+
 }
 
 #Sardinia Ruling
@@ -104,14 +104,14 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		
+
 		corsica_sardinia_area = {
 			limit = {
 				NOT = { is_core = ROOT }
 			}
 			add_nationalism = 5
 		}
-	}	
+	}
 }
 
 #Strait of Gibraltar
@@ -122,6 +122,7 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 
 	fire_only_once = yes
+
 	trigger = {
 		owns = 334
 		religion = catholic
@@ -185,7 +186,6 @@ country_event = {
 			}
 		}
 	}
-	
 }
 
 #The Steppe's traders
@@ -199,6 +199,7 @@ country_event = {
 
 	option = {
 		name = ME_Genoa_Events.4.OPT1
+
 		trigger = {
 			hidden_trigger = {
 				OR = {
@@ -225,11 +226,14 @@ country_event = {
 		if = {
 			limit = {
 				exists = RUS
+				RUS = {
+					NOT = { has_country_flag = steppe_traders_refused }
+				}
 			}
 			RUS = {
 				country_event = {
 					id = ME_Genoa_Events.5
-				days = 30
+					days = 30
 				}
 			}
 		}
@@ -237,7 +241,7 @@ country_event = {
 			MOS = {
 				country_event = {
 					id = ME_Genoa_Events.5
-				days = 30
+					days = 30
 				}
 			}
 		}
@@ -245,6 +249,7 @@ country_event = {
 
 	option = {
 		name = ME_Genoa_Events.4.OPT2
+
 		trigger = {
 			hidden_trigger = {
 				OR = {
@@ -271,11 +276,14 @@ country_event = {
 		if = {
 			limit = {
 				exists = GLH
+				GLH = {
+					NOT = { has_country_flag = steppe_traders_refused }
+				}
 			}
 			GLH = {
 				country_event = {
 					id = ME_Genoa_Events.5
-				days = 30
+					days = 30
 				}
 			}
 		}
@@ -283,7 +291,7 @@ country_event = {
 			GHR = {
 				country_event = {
 					id = ME_Genoa_Events.5
-				days = 30
+					days = 30
 				}
 			}
 		}
@@ -298,7 +306,6 @@ country_event = {
 
 		add_stability_or_adm_power = yes
 	}
-	
 }
 
 country_event = {
@@ -307,8 +314,8 @@ country_event = {
 	desc = ME_Genoa_Events.5.D
 	picture = DIPLOMACY_eventPicture
 
-	is_triggered_only = yes
 	major = yes
+	is_triggered_only = yes
 
 	option = {
 		name = ME_Genoa_Events.5.OPT1
@@ -385,8 +392,10 @@ country_event = {
 
 	option = {
 		name = ME_Genoa_Events.6.OPT1
+
 		trigger = {
 			hidden_trigger = {
+				NOT = { owns = 410 }
 				410 = {
 					owner = {
 						NOT = { has_country_flag = sil_road_refused }
@@ -411,8 +420,10 @@ country_event = {
 
 	option = {
 		name = ME_Genoa_Events.6.OPT2
+
 		trigger = {
 			hidden_trigger = {
+				NOT = { owns = 428 }
 				428 = {
 					owner = {
 						NOT = { has_country_flag = sil_road_refused }
@@ -438,8 +449,10 @@ country_event = {
 
 	option = {
 		name = ME_Genoa_Events.6.OPT3
+
 		trigger = {
 			hidden_trigger = {
+				NOT = { owns = 454 }
 				454 = {
 					owner = {
 						NOT = { has_country_flag = sil_road_refused }
@@ -552,22 +565,26 @@ country_event = {
 	title = ME_Genoa_Events.8.T
 	desc = ME_Genoa_Events.8.D
 	picture = BAD_WITH_MONARCH_eventPicture
-	
+
 	hidden = yes
+
 	trigger = {
 		tag = GEN
 		OR = {
-			has_country_modifier = gen_genoese_steppe_trade_aggreement_genoa
-			has_country_modifier = gen_genoese_silk_road_trade_aggreement_genoa
-		}
-		OR = {
-			NOT = {
-				any_country = {
-					OR = {
+			AND = {
+				has_country_modifier = gen_genoese_steppe_trade_aggreement_genoa
+				NOT = {
+					any_ally = {
 						has_country_flag = gen_trade_steppe_trade_country
+					}
+				}
+			}
+			AND = {
+				has_country_modifier = gen_genoese_silk_road_trade_aggreement_genoa
+				NOT = {
+					any_ally = {
 						has_country_flag = gen_trade_silk_road_country
 					}
-					alliance_with = GEN
 				}
 			}
 		}
@@ -578,9 +595,8 @@ country_event = {
 			if = {
 				limit = {
 					NOT = {
-						any_country = {
+						any_ally = {
 							has_country_flag = gen_trade_steppe_trade_country
-							alliance_with = GEN
 						}
 					}
 				}
@@ -588,15 +604,24 @@ country_event = {
 					limit = {
 						has_country_flag = gen_trade_steppe_trade_country
 					}
+					clr_country_flag = gen_trade_steppe_trade_country
 					remove_country_modifier = gen_genoese_steppe_trade_aggreement_steppe
 				}
 				remove_country_modifier = gen_genoese_steppe_trade_aggreement_genoa
 			}
-			else = {
+			if = {
+				limit = {
+					NOT = {
+						any_ally = {
+							has_country_flag = gen_trade_silk_road_country
+						}
+					}
+				}
 				random_country = {
 					limit = {
-						has_country_flag = gen_trade_steppe_trade_country
+						has_country_flag = gen_trade_silk_road_country
 					}
+					clr_country_flag = gen_trade_silk_road_country
 					remove_country_modifier = gen_genoese_silk_road_trade_aggreement_asiatic
 				}
 				remove_country_modifier = gen_genoese_silk_road_trade_aggreement_genoa
@@ -610,7 +635,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-	}	
+	}
 }
 
 country_event = {
@@ -618,30 +643,30 @@ country_event = {
 	title = ME_Genoa_Events.9.T
 	desc = ME_Genoa_Events.9.D
 
-	fire_only_once = yes
 	hidden = yes
+	fire_only_once = yes
 
 	trigger = {
-		GEN = {
-			num_of_owned_provinces_with = {
-				value = 1
-				has_province_modifier = gen_frank_roman_trade_aggreement
-			}
-			NOT = { alliance_with = BYZ }
+		tag = GEN
+		any_owned_province = {
+			has_province_modifier = gen_frank_roman_trade_aggreement
 		}
+		NOT = { alliance_with = BYZ }
 	}
 
 	immediate = {
 		hidden_effect = {
-			GEN = { 
-				every_owned_province = {
-					limit = { has_province_modifier = gen_frank_roman_trade_aggreement }
-					remove_province_modifier = gen_frank_roman_trade_aggreement
+			every_owned_province = {
+				limit = {
+					has_province_modifier = gen_frank_roman_trade_aggreement
 				}
+				remove_province_modifier = gen_frank_roman_trade_aggreement
 			}
-			BYZ = { 
+			BYZ = {
 				every_owned_province = {
-					limit = { has_province_modifier = gen_frank_roman_trade_aggreement }
+					limit = {
+						has_province_modifier = gen_frank_roman_trade_aggreement
+					}
 					remove_province_modifier = gen_frank_roman_trade_aggreement
 				}
 			}
@@ -654,7 +679,7 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-	}	
+	}
 }
 
 country_event = {
@@ -679,5 +704,4 @@ country_event = {
 			factor = 50
 		}
 	}
-	
 }

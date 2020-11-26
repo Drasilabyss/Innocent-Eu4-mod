@@ -19,7 +19,7 @@ genoa_missions_1 = {
 		}
 	}
 	has_country_shield = yes
-	
+
 	gen_roman_diplomacy = {
 		icon = mission_pf_cross
 		required_missions = { }
@@ -121,7 +121,7 @@ genoa_missions_1 = {
 			}
 		}
 	}
-	
+
 	gen_urbs_custoditas_deo = {
 		icon = mission_eastern_european_city
 		required_missions = {
@@ -212,7 +212,7 @@ genoa_missions_1 = {
 			}
 		}
 	}
-	
+
 	gen_reign_in_crimea = {
 		icon = mission_dominate_genoa
 		required_missions = { gen_theodoro }
@@ -348,10 +348,10 @@ genoa_missions_1 = {
 					duration = 9125
 				}
 			}
-			
+
 		}
 	}
-	
+
 	gen_gibraltar = {
 		icon = conquer_malacca
 		required_missions = { gen_tangiers }
@@ -372,7 +372,7 @@ genoa_missions_1 = {
 			}
 		}
 	}
-	
+
 	gen_port_panama = {
 		icon = mission_rb_scottish_the_darien_scheme
 		required_missions = { gen_another_route_india }
@@ -415,7 +415,7 @@ genoa_missions_1 = {
 						loyalty = 60
 					}
 				}
-				835 = { 
+				835 = {
 					create_or_add_center_of_trade_level = { value = 1 }
 				}
 			}
@@ -537,7 +537,7 @@ genoa_missions_2 = {
 			}
 		}
 	}
-	
+
 	gen_theodoro = {
 		icon = dalmatian_conquest
 		required_missions = {
@@ -737,7 +737,7 @@ genoa_missions_2 = {
 			}
 		}
 	}
-	
+
 	gen_westward = {
 		icon = me_mission_venice_navy
 		required_missions = { }
@@ -777,7 +777,7 @@ genoa_missions_2 = {
 			}
 		}
 	}
-	
+
 	gen_tangiers = {
 		icon = control_the_means_of_transaction
 		required_missions = { gen_westward }
@@ -852,7 +852,7 @@ genoa_missions_2 = {
 			}
 		}
 	}
-	
+
 	gen_another_route_india = {
 		icon = mission_establish_high_seas_navy
 		required_missions = { gen_tangiers }
@@ -904,46 +904,43 @@ genoa_missions_2 = {
 				limit = {
 					area = cape_of_good_hope_area
 				}
-				heavy_frigate = ROOT
-				heavy_frigate = ROOT
-				heavy_frigate = ROOT
+				heavy_ship = ROOT
+				heavy_ship = ROOT
+				heavy_ship = ROOT
 			}
 			if = {
 				limit = {
-					num_of_owned_provinces_with = {
-						value = 1
-						OR = {
-							area = cape_of_good_hope_area
-							area = limpopo_area
-						}
+					cape_of_good_hope_area = {
+						is_city = no
+						owned_by = ROOT
+					}
+					limpopo_area = {
 						is_city = no
 						owned_by = ROOT
 					}
 				}
 				cape_of_good_hope_area = {
 					limit = {
-						is_colony = yes
+						is_city = no
 						owned_by = ROOT
 					}
 					add_colonysize = 150
 				}
 				limpopo_area = {
 					limit = {
-						is_colony = yes
+						is_city = no
 						owned_by = ROOT
 					}
 					add_colonysize = 150
 				}
 			}
 			else = {
-				cape_of_good_hope_area = {
+				random_owned_province = {
 					limit = {
-						owned_by = ROOT
-						NOT = {
-							cape_of_good_hope_area = {
-								base_production = PREV
-								NOT = { province_id = PREV }
-							}
+						area = cape_of_good_hope_area
+						cape_of_good_hope_area = {
+							type = all
+							PREV = { base_production = PREV }
 						}
 					}
 					add_building_construction = {
@@ -993,7 +990,7 @@ genoa_missions_2 = {
 			1340 = {
 				every_trade_node_member_province = {
 					limit = {
-						trade_goods = spices 
+						trade_goods = spices
 					}
 					if = {
 						limit = {
@@ -1014,7 +1011,7 @@ genoa_missions_2 = {
 		}
 		position = 13
 		provinces_to_highlight = {
-			trade_goods = spices			
+			trade_goods = spices
 		}
 		trigger = {
 			535 = {
@@ -1091,7 +1088,7 @@ genoa_missions_3 = {
 		}
 	}
 	has_country_shield = yes
-	
+
 	gen_mighty_fleet = {
 		icon = overshadow_venice
 		required_missions = { }
@@ -1236,14 +1233,14 @@ genoa_missions_3 = {
 				country_or_non_sovereign_subject_holds = ROOT
 				NOT = { devastation = 2 }
 				NOT = { unrest = 3 }
-				NOT = { local_autonomy = 15 }				
+				NOT = { local_autonomy = 15 }
 			}
 			liguria_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 				NOT = { devastation = 2 }
 				NOT = { unrest = 3 }
-				NOT = { local_autonomy = 15 }				
+				NOT = { local_autonomy = 15 }
 			}
 		}
 		effect = {
@@ -1316,7 +1313,7 @@ genoa_missions_3 = {
 			}
 		}
 	}
-	
+
 	gen_alexandria = {
 		icon = fortify_malta
 		required_missions = { gen_italian_trade }
@@ -1510,7 +1507,7 @@ genoa_missions_3 = {
 			}
 		}
 	}
-	
+
 	gen_nice = {
 		icon = unify_piedmont
 		required_missions = { gen_merchant_army }
@@ -1540,7 +1537,7 @@ genoa_missions_3 = {
 			}
 		}
 	}
-	
+
 	gen_conquer_piedmont = {
 		icon = glory_to_turin
 		required_missions = { gen_nice }
@@ -1654,7 +1651,7 @@ genoa_missions_4 = {
 			}
 		}
 	}
-	
+
 	gen_take_back_whats_ours = {
 		icon = seize_sardinia
 		required_missions = {
@@ -1703,7 +1700,7 @@ genoa_missions_4 = {
 			}
 		}
 	}
-	
+
 	gen_trade_trouble_tunis = {
 		icon = personal_diplomacy
 		required_missions = { gen_italian_trade }
@@ -1749,7 +1746,7 @@ genoa_missions_4 = {
 			}
 		}
 	}
-	
+
 	gen_tripoli = {
 		icon = mission_occupy_alexandria
 		required_missions = { gen_trade_trouble_tunis }
@@ -1805,7 +1802,7 @@ genoa_missions_4 = {
 			add_years_of_income = 0.5
 		}
 	}
-	
+
 	gen_merchant_army = {
 		icon = military_self_reliance
 		required_missions = { }
@@ -1857,7 +1854,7 @@ genoa_missions_4 = {
 			}
 		}
 	}
-	
+
 	gen_rout_tuscans = {
 		icon = reclaim_the_ducal_lands
 		required_missions = { gen_merchant_army }
@@ -1880,7 +1877,7 @@ genoa_missions_4 = {
 			add_accepted_culture = tuscan
 		}
 	}
-	
+
 	gen_reign_in_italy = {
 		icon = expand_the_terraferma
 		required_missions = { gen_defeat_milan gen_conquer_piedmont gen_rout_tuscans }
@@ -2060,7 +2057,7 @@ genoa_missions_5 = {
 				add_province_modifier = {
 					name = gen_genoese_fortress
 					duration = 5475
-				}				
+				}
 			}
 		}
 	}
@@ -2155,7 +2152,7 @@ genoa_missions_5 = {
 			}
 		}
 	}
-	
+
 	gen_acquire_parma = {
 		icon = ansbach_succession
 		required_missions = { gen_merchant_army }
@@ -2183,7 +2180,7 @@ genoa_missions_5 = {
 			}
 		}
 	}
-	
+
 	gen_defeat_milan = {
 		icon = seize_lombardy
 		required_missions = { gen_acquire_parma }

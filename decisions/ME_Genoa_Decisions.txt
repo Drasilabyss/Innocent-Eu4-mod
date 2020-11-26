@@ -2,8 +2,8 @@ country_decisions = {
 	gen_the_colony_system = {
 		major = yes
 		potential = {
-			NOT = { has_country_flag = gen_colony_system_flag }
 			tag = GEN
+			NOT = { has_country_flag = gen_colony_system_flag }
 		}
 		provinces_to_highlight = {
 			OR = {
@@ -33,7 +33,10 @@ country_decisions = {
 				province_id = 286
 				province_id = 330
 			}
-			NOT = { owned_by = ROOT }
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
 		}
 		allow = {
 			years_of_income = 2
