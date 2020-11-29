@@ -44,76 +44,6 @@ country_event = {
 
 }
 
-#Sardinia Ruling
-country_event = {
-	id = ME_Genoa_Events.2
-	title = ME_Genoa_Events.2.T
-	desc = ME_Genoa_Events.2.D
-	picture = GOOD_WITH_MONARCH_eventPicture
-
-	is_triggered_only = yes
-
-	option = {
-		name = ME_Genoa_Events.2.OPT1
-
-		ai_chance = {
-			factor = 50
-		}
-
-		corsica_sardinia_area = {
-			limit = {
-				NOT = { is_core = SAR }
-			}
-			add_core = SAR
-		}
-		release = SAR
-		SAR = {
-			change_government = monarchy
-			set_capital = 127
-			hidden_effect = {
-				change_religion = FROM
-				add_treasury = 20
-				add_yearly_manpower = 10
-				add_yearly_sailors = 10
-			}
-		}
-		if = {
-			limit = {
-				is_expanded_mod_active = { mod = subjects }
-				can_create_subject_type = {
-					subject = ROOT
-					subject_type = naval_march
-				}
-			}
-			create_subject = {
-				subject_type = naval_march
-				subject = SAR
-			}
-		}
-		else = {
-			create_subject = {
-				subject_type = march
-				subject = SAR
-			}
-		}
-	}
-
-	option = {
-		name = ME_Genoa_Events.2.OPT2
-
-		ai_chance = {
-			factor = 50
-		}
-
-		corsica_sardinia_area = {
-			limit = {
-				NOT = { is_core = ROOT }
-			}
-			add_nationalism = 5
-		}
-	}
-}
-
 #Strait of Gibraltar
 country_event = {
 	id = ME_Genoa_Events.3
@@ -127,6 +57,9 @@ country_event = {
 		owns = 334
 		religion = catholic
 		exists = GEN
+		GEN = {
+			NOT = { owns = 334 }
+		}
 	}
 
 	mean_time_to_happen = {
@@ -496,6 +429,7 @@ country_event = {
 	picture = DIPLOMACY_eventPicture
 
 	is_triggered_only = yes
+	major = yes
 
 	option = {
 		name = ME_Genoa_Events.7.OPT1

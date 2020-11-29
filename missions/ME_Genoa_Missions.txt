@@ -794,7 +794,7 @@ genoa_missions_2 = {
 		effect = {
 			add_country_modifier = {
 				name = gen_route_india
-				duration = 9125
+				duration = 18250
 			}
 			define_explorer = {
 				fire = 2
@@ -1393,84 +1393,13 @@ genoa_missions_3 = {
 			gen_tripoli
 		}
 		position = 7
-		provinces_to_highlight = {
-			province_id = 358
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
 		trigger = {
-			358 = {
-				is_strongest_trade_power = ROOT
-				any_country = {
-					358 = {
-						trade_share = {
-							share = 10
-							country = PREV
-						}
-					}
-					NOT = {
-						naval_strength = {
-							who = ROOT
-							value = 0.5
-						}
-					}
-				}
-			}
-			341 = {
-				is_strongest_trade_power = ROOT
-				any_country = {
-					341 = {
-						trade_share = {
-							share = 10
-							country = PREV
-						}
-					}
-					NOT = {
-						naval_strength = {
-							who = ROOT
-							value = 0.5
-						}
-					}
-				}
-			}
-			1298 = {
-				is_strongest_trade_power = ROOT
-				any_country = {
-					1298 = {
-						trade_share = {
-							share = 10
-							country = PREV
-						}
-					}
-					NOT = {
-						naval_strength = {
-							who = ROOT
-							value = 0.5
-						}
-					}
-				}
-			}
-			1293 = {
-				is_strongest_trade_power = ROOT
-				any_country = {
-					1293 = {
-						trade_share = {
-							share = 10
-							country = PREV
-						}
-					}
-					NOT = {
-						naval_strength = {
-							who = ROOT
-							value = 0.5
-						}
-					}
-				}
-			}
-			OR = {
-				1308 = {
+			custom_trigger_tooltip = {
+				tooltip = GEN_MARE_NOSTRUM_TT
+				358 = {
 					is_strongest_trade_power = ROOT
 					any_country = {
-						1308 = {
+						358 = {
 							trade_share = {
 								share = 10
 								country = PREV
@@ -1484,10 +1413,10 @@ genoa_missions_3 = {
 						}
 					}
 				}
-				1320 = {
+				341 = {
 					is_strongest_trade_power = ROOT
 					any_country = {
-						1320 = {
+						341 = {
 							trade_share = {
 								share = 10
 								country = PREV
@@ -1497,6 +1426,76 @@ genoa_missions_3 = {
 							naval_strength = {
 								who = ROOT
 								value = 0.5
+							}
+						}
+					}
+				}
+				1298 = {
+					is_strongest_trade_power = ROOT
+					any_country = {
+						1298 = {
+							trade_share = {
+								share = 10
+								country = PREV
+							}
+						}
+						NOT = {
+							naval_strength = {
+								who = ROOT
+								value = 0.5
+							}
+						}
+					}
+				}
+				1293 = {
+					is_strongest_trade_power = ROOT
+					any_country = {
+						1293 = {
+							trade_share = {
+								share = 10
+								country = PREV
+							}
+						}
+						NOT = {
+							naval_strength = {
+								who = ROOT
+								value = 0.5
+							}
+						}
+					}
+				}
+				OR = {
+					1308 = {
+						is_strongest_trade_power = ROOT
+						any_country = {
+							1308 = {
+								trade_share = {
+									share = 10
+									country = PREV
+								}
+							}
+							NOT = {
+								naval_strength = {
+									who = ROOT
+									value = 0.5
+								}
+							}
+						}
+					}
+					1320 = {
+						is_strongest_trade_power = ROOT
+						any_country = {
+							1320 = {
+								trade_share = {
+									share = 10
+									country = PREV
+								}
+							}
+							NOT = {
+								naval_strength = {
+									who = ROOT
+									value = 0.5
+								}
 							}
 						}
 					}
@@ -1985,9 +1984,6 @@ genoa_missions_5 = {
 			}
 		}
 		effect = {
-			country_event = {
-				id = ME_Genoa_Events.2
-			}
 			corsica_sardinia_area = {
 				add_province_modifier = {
 					name = gen_genoese_ruling
