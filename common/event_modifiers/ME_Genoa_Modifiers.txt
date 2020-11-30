@@ -69,7 +69,7 @@ gen_victory_doge = {
 	global_unrest = -1
 }
 gen_genoese_assault = {
-	allowed_marine_fraction = 0.15
+	galley_cost = -0.15
 }
 gen_mediterranean_ambition = {
 	trade_efficiency = 0.15
