@@ -119,7 +119,7 @@ gen_italian_trade_conquered = {
 #5
 gen_genoese_market_dominance = {
 	trade_efficiency = 0.10
-	placed_merchant_power = 0.10
+	placed_merchant_power = 10
 }
 gen_anziani_fall = {
 	local_autonomy = -0.25

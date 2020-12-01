@@ -135,7 +135,10 @@ genoa_missions_1 = {
 		trigger = {
 			if = {
 				limit = {
-					alliance_with = BYZ
+					OR = {
+						alliance_with = BYZ
+						overlord_of = BYZ
+					}
 				}
 				151 = {
 					OR = {
@@ -159,7 +162,10 @@ genoa_missions_1 = {
 		effect = {
 			if = {
 				limit = {
-					alliance_with = BYZ
+					OR = {
+						alliance_with = BYZ
+						overlord_of = BYZ
+					}
 				}
 				if = {
 					limit = {
@@ -219,7 +225,7 @@ genoa_missions_1 = {
 		position = 5
 		provinces_to_highlight = {
 			area = crimea_area
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
 			1322 = {
@@ -227,7 +233,7 @@ genoa_missions_1 = {
 			}
 			crimea_area = {
 				type = all
-				owned_by = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
@@ -288,7 +294,7 @@ genoa_missions_1 = {
 				limit = {
 					OR = {
 						alliance_with = GLH
-						alliance_with = GHR
+						alliance_with = GOL
 					}
 				}
 				lower_don_area = {
@@ -296,7 +302,7 @@ genoa_missions_1 = {
 						owned_by = ROOT
 						OR = {
 							owned_by = GLH
-							owned_by = GHR
+							owned_by = GOL
 						}
 					}
 				}
@@ -305,7 +311,7 @@ genoa_missions_1 = {
 						owned_by = ROOT
 						OR = {
 							owned_by = GLH
-							owned_by = GHR
+							owned_by = GOL
 						}
 					}
 				}
@@ -858,7 +864,10 @@ genoa_missions_2 = {
 		required_missions = { gen_tangiers }
 		position = 10
 		provinces_to_highlight = {
-			area = macaronesia_area
+			OR = {
+				area = macaronesia_area
+				area = cap_verde_area
+			}
 		}
 		trigger = {
 			OR = {
@@ -870,6 +879,15 @@ genoa_missions_2 = {
 				num_of_owned_provinces_with = {
 					value = 1
 					area = macaronesia_area
+				}
+				num_of_owned_provinces_with = {
+					value = 1
+					area = cap_verde_area
+					has_colonist = yes
+				}
+				num_of_owned_provinces_with = {
+					value = 1
+					area = cap_verde_area
 				}
 			}
 		}
@@ -1098,8 +1116,13 @@ genoa_missions_3 = {
 		required_missions = { }
 		position = 1
 		trigger = {
-			navy_size_percentage = 1
-			num_of_galley = 12
+			OR = {
+				navy_size_percentage = 1
+				AND = {
+					num_of_galley = 12
+					navy_size_percentage = 0.75
+				}
+			}
 			num_of_admirals = 1
 		}
 		effect = {
@@ -1546,21 +1569,12 @@ genoa_missions_3 = {
 		required_missions = { gen_nice }
 		position = 11
 		provinces_to_highlight = {
-			OR = {
-				province_id = 103
-				province_id = 2981
-				province_id = 1875
-			}
+			area = piedmont_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			103 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			2981 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			1875 = {
+			piedmont_area = {
+				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
@@ -1719,7 +1733,7 @@ genoa_missions_4 = {
 		}
 		effect = {
 			add_country_modifier = {
-				name = gen_protecting_maghreb_trade
+				name = gen_protecting_maGOLeb_trade
 				duration = 9125
 			}
 			tunisia_area = {
@@ -2140,7 +2154,7 @@ genoa_missions_5 = {
 						has_building = trade_depot
 					}
 					remove_building = trade_depot
-					add_building_construction = {
+					add_building_construction = {country_or_non
 						building = stock_exchange
 						speed = 1
 						cost = 0

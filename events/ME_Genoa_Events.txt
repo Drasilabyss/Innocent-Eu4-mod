@@ -52,6 +52,7 @@ country_event = {
 	picture = TRADEGOODS_eventPicture
 
 	fire_only_once = yes
+	major = yes
 
 	trigger = {
 		owns = 334
