@@ -256,6 +256,10 @@ country_event = {
 
 		ai_chance = {
 			factor = 99
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
 		}
 
 		set_country_flag = gen_trade_steppe_trade_country
@@ -437,6 +441,10 @@ country_event = {
 
 		ai_chance = {
 			factor = 60
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
 		}
 
 		set_country_flag = gen_trade_silk_road_country

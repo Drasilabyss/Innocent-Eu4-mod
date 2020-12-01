@@ -231,14 +231,33 @@ genoa_missions_1 = {
 			1322 = {
 				is_strongest_trade_power = ROOT
 			}
-			crimea_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			if = {
+				limit = {
+					has_dlc = "Mare Nostrum"
+				}
+				crimea_area = {
+					type = all
+					OR = {
+						country_or_non_sovereign_subject_holds = ROOT
+						owner = { is_in_trade_league_with = ROOT }
+					}
+				}
+			}
+			else = {
+				crimea_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
 			}
 		}
 		effect = {
 			285 = {
-				create_or_add_center_of_trade_level = { value = 1 }
+				if = {
+					limit = {
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					create_or_add_center_of_trade_level = { value = 1 }
+				}
 			}
 			crimea_area = {
 				add_province_modifier = {
@@ -655,6 +674,49 @@ genoa_missions_2 = {
 			syria_area = {
 				has_port = yes
 				owned_by = ROOT
+			}
+			410 = {
+				owner = {
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+			}
+			if = {
+				limit = {
+					428 = {
+						owner = {
+							NOT = { owns = 410 }
+						}
+					}
+				}
+				428 = {
+					owner = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					454 = {
+						owner = {
+							NOT = { owns = 410 }
+							NOT = { owns = 428 }
+						}
+					}
+				}
+				454 = {
+					owner = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+					}
+				}
 			}
 		}
 		effect = {
@@ -1733,7 +1795,7 @@ genoa_missions_4 = {
 		}
 		effect = {
 			add_country_modifier = {
-				name = gen_protecting_maGOLeb_trade
+				name = gen_protecting_maghreb_trade
 				duration = 9125
 			}
 			tunisia_area = {
@@ -2154,7 +2216,7 @@ genoa_missions_5 = {
 						has_building = trade_depot
 					}
 					remove_building = trade_depot
-					add_building_construction = {country_or_non
+					add_building_construction = {
 						building = stock_exchange
 						speed = 1
 						cost = 0
