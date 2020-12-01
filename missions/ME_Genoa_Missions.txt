@@ -126,9 +126,9 @@ genoa_missions_1 = {
 		icon = mission_eastern_european_city
 		required_missions = {
 			gen_roman_diplomacy
-			gen_genoese_colonies
+			gen_mighty_fleet
 		}
-		position = 3
+		position = 2
 		provinces_to_highlight = {
 			province_id = 151
 		}
