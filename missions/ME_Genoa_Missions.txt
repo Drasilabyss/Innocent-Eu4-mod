@@ -1192,7 +1192,22 @@ genoa_missions_3 = {
 				name = gen_genoese_naval_tactics
 				duration = 7300
 			}
+			corsica_sardinia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+			}
 			3003 = {
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			115 = {
 				if = {
 					limit = {
 						NOT = { owned_by = ROOT }
@@ -2024,15 +2039,15 @@ genoa_missions_5 = {
 		}
 		position = 2
 		provinces_to_highlight = {
-			province_id = 2980
+			province_id = 115
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			owns_or_non_sovereign_subject_of = 2980
+			owns_or_non_sovereign_subject_of = 115
 		}
 		effect = {
 			add_years_of_income = 1
-			2980 = {
+			115 = {
 				add_nationalism = -10
 				add_province_modifier = {
 					name = gen_anziani_fall
