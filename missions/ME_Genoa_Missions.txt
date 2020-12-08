@@ -422,14 +422,10 @@ genoa_missions_1 = {
 			if = {
 				limit = {
 					has_dlc = "Res Publica"
+					faction_in_power = mr_traders
 				}
-				if = {
-					limit = {
-						faction_in_power = mr_traders
-					}
-					835 = {
-						create_or_add_center_of_trade_level = { value = 1 }
-					}
+				835 = {
+					create_or_add_center_of_trade_level = { value = 1 }
 				}
 			}
 			else_if = {
@@ -882,6 +878,20 @@ genoa_missions_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			cap_verde_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			macaronesia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			1749 = {
 				if = {
 					limit = {
@@ -1197,26 +1207,16 @@ genoa_missions_3 = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
 				}
+				add_permanent_claim = ROOT
 			}
-			3003 = {
-				if = {
-					limit = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
+			aegean_archipelago_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
 			115 = {
-				if = {
-					limit = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
-				}
-				add_permanent_claim = ROOT
-			}
-			164 = {
 				if = {
 					limit = {
 						NOT = { owned_by = ROOT }

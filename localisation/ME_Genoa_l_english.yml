@@ -106,11 +106,6 @@
  ME_Genoa_Events.1.OPT1: "His knowledge might come handy"
  ME_Genoa_Events.1.OPT2: "He shall lead our navy!"
 
- ME_Genoa_Events.3.T: "Strait of Gibraltar"
- ME_Genoa_Events.3.D: "A man approaches, cloacked in black, he speaks a foreign language, a mix of Latin with Greek and French influx, he has a sigil, silver to the red cross, stamped with a ducal crown, with the crest of the two-faced Janus head and the supports of two griffins, he's from Genoa. \nHe's bringing forth an agreement, a pact that would make both our nation prosper indefenetly, but should we trust an Italian, and furthermore a Genovese? They care only about money."
- ME_Genoa_Events.3.OPT1: "We will accept"
- ME_Genoa_Events.3.OPT2: "Never, the city is ours"
-
  ME_Genoa_Events.4.T: "The Steppe's traders"
  ME_Genoa_Events.4.D: "To facilitate trade, Genghis offered protection for merchants who began to come from east and west. He also offered a higher status for merchants than that allowed by the Chinese or Persians who despised trade and traders. .During the Mongol Empire, merchants found protection, status, tax exemption, loans and consistent aid from the Khans. For the 100 years of the height of the Empire, the East-West Mongol trade routes became the fabled Silk Road which for the first time linked Europe to Asia, allowing the free flow of ideas, technologies and goods. \nAfter the fall of his empire, our merchants are still welcomed in the court of the Khan in the East, but a new power has risen, a power of our christian brethern, maybe we should seek agreement with the Grand Prince instead?"
  ME_Genoa_Events.4.OPT1: "Our brother the Grand Prince will suite"

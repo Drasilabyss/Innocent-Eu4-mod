@@ -44,84 +44,6 @@ country_event = {
 
 }
 
-#Strait of Gibraltar
-country_event = {
-	id = ME_Genoa_Events.3
-	title = ME_Genoa_Events.3.T
-	desc = ME_Genoa_Events.3.D
-	picture = TRADEGOODS_eventPicture
-
-	fire_only_once = yes
-	major = yes
-
-	trigger = {
-		owns = 334
-		religion = catholic
-		exists = GEN
-		GEN = {
-			NOT = { owns = 334 }
-		}
-	}
-
-	mean_time_to_happen = {
-		years = 1
-	}
-
-	option = {
-		name = ME_Genoa_Events.3.OPT1
-
-		ai_chance = {
-			factor = 100
-		}
-
-		add_country_modifier = {
-			name = gen_genoese_trade_agreement
-			duration = 10950
-		}
-		334 = {
-			galley = ROOT
-			galley = ROOT
-			galley = ROOT
-			if = {
-				limit = {
-					NOT = { is_core = GEN }
-				}
-				add_core = GEN
-			}
-			cede_province = GEN
-		}
-		GEN = {
-			add_opinion = {
-				who = ROOT
-				modifier = gen_accepted_treaty
-			}
-			reverse_add_opinion = {
-				who = ROOT
-				modifier = gen_accepted_treaty
-			}
-		}
-	}
-
-	option = {
-		name = ME_Genoa_Events.3.OPT2
-
-		ai_chance = {
-			factor = 1
-		}
-
-		GEN = {
-			add_opinion = {
-				who = ROOT
-				modifier = gen_refused_treaty
-			}
-			reverse_add_opinion = {
-				who = ROOT
-				modifier = gen_refused_treaty
-			}
-		}
-	}
-}
-
 #The Steppe's traders
 country_event = {
 	id = ME_Genoa_Events.4
@@ -194,8 +116,8 @@ country_event = {
 						}
 					}
 					AND = {
-						exists = GHR
-						GHR = {
+						exists = GOL
+						GOL = {
 							NOT = { has_country_flag = steppe_traders_refused }
 						}
 					}
@@ -222,7 +144,7 @@ country_event = {
 			}
 		}
 		else = {
-			GHR = {
+			GOL = {
 				country_event = {
 					id = ME_Genoa_Events.5
 					days = 30
