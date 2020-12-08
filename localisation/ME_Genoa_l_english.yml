@@ -159,6 +159,7 @@
  gen_indian_spices: "Spesia da la India"
  gen_genoese_haven_dlc: "Genoese Haven"
  gen_genoese_haven: "Genoese Haven"
+
  #3
  gen_genoese_naval_tactics: "Genoese Naval Tactics"
  gen_facing_doge: "Facing the Doge"
@@ -168,6 +169,7 @@
  gen_trading_egypt: "Trading in Egypt"
  gen_mediterranean_trade_republic: "Mediterranean Trade Republic"
  gen_defensive_on_the_alps: "Alpine Defence"
+ gen_conquest_piedmont: "Conquest of Piedmont"
 
  #4
  gen_tyrrenean_wood: "Tyrrenean Wood"
@@ -178,6 +180,7 @@
  gen_merchant_army: "Merchant Army"
  gen_arts: "Tuscan Arts"
  gen_italian_trade_conquered: "Conquered Italy"
+ gen_conquest_tuscany: "Conquest of Tuscany"
 
  #5
  gen_genoese_market_dominance: "Ianuensis Ergo Mercator"
@@ -188,6 +191,7 @@
  gen_santa_maria_carignano: "Santa Maria di Carignano"
  gen_san_giovanni_battista: "San Giovanni Battista"
  gen_trade_with_alps: "Lombardian Trade"
+ gen_conquest_lombardy: "Conquest of Lombardy"
 
  #Event Modifiers
  gen_genoese_trade_agreement: "Genoese Trade Agreement"

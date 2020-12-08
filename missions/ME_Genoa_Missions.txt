@@ -265,6 +265,13 @@ genoa_missions_1 = {
 					duration = 10950
 				}
 			}
+			azov_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 
@@ -407,6 +414,7 @@ genoa_missions_1 = {
 		}
 		trigger = {
 			835 = {
+				is_city = yes
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
@@ -673,9 +681,12 @@ genoa_missions_2 = {
 			}
 			410 = {
 				owner = {
-					has_opinion = {
-						who = ROOT
-						value = 100
+					OR = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+						is_rival = ROOT
 					}
 				}
 			}
@@ -689,9 +700,12 @@ genoa_missions_2 = {
 				}
 				428 = {
 					owner = {
-						has_opinion = {
-							who = ROOT
-							value = 100
+						OR = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+							is_rival = ROOT
 						}
 					}
 				}
@@ -707,9 +721,12 @@ genoa_missions_2 = {
 				}
 				454 = {
 					owner = {
-						has_opinion = {
-							who = ROOT
-							value = 100
+						OR = {
+							has_opinion = {
+								who = ROOT
+								value = 100
+							}
+							is_rival = ROOT
 						}
 					}
 				}
@@ -754,9 +771,12 @@ genoa_missions_2 = {
 					exists = MOS
 				}
 				MOS = {
-					has_opinion = {
-						who = ROOT
-						value = 100
+					OR = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+						is_rival = ROOT
 					}
 				}
 			}
@@ -765,9 +785,12 @@ genoa_missions_2 = {
 					exists = RUS
 				}
 				RUS = {
-					has_opinion = {
-						who = ROOT
-						value = 100
+					OR = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+						is_rival = ROOT
 					}
 				}
 			}
@@ -776,9 +799,12 @@ genoa_missions_2 = {
 					exists = GLH
 				}
 				GLH = {
-					has_opinion = {
-						who = ROOT
-						value = 100
+					OR = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+						is_rival = ROOT
 					}
 				}
 			}
@@ -787,9 +813,12 @@ genoa_missions_2 = {
 					exists = GOL
 				}
 				GOL = {
-					has_opinion = {
-						who = ROOT
-						value = 100
+					OR = {
+						has_opinion = {
+							who = ROOT
+							value = 100
+						}
+						is_rival = ROOT
 					}
 				}
 			}
@@ -798,6 +827,20 @@ genoa_missions_2 = {
 			add_dip_power = 50
 			country_event = {
 				id = ME_Genoa_Events.4
+			}
+			zaporizhia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_don_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -1234,6 +1277,15 @@ genoa_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			2410 = {
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
 		}
 	}
 
@@ -1303,6 +1355,13 @@ genoa_missions_3 = {
 			add_ruler_modifier = {
 				name = gen_victory_doge
 				duration = 7300
+			}
+			venetia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -1661,6 +1720,12 @@ genoa_missions_3 = {
 				duration = 7300
 			}
 			add_accepted_culture = piedmontese
+			hidden_effect = {
+				add_country_modifier = {
+					name = gen_conquest_piedmont
+					duration = -1
+				}
+			}
 		}
 	}
 
@@ -1969,6 +2034,12 @@ genoa_missions_4 = {
 				duration = 9125
 			}
 			add_accepted_culture = tuscan
+			hidden_effect = {
+				add_country_modifier = {
+					name = gen_conquest_tuscany
+					duration = -1
+				}
+			}
 		}
 	}
 
@@ -2292,6 +2363,12 @@ genoa_missions_5 = {
 				duration = 7300
 			}
 			add_accepted_culture = lombard
+			hidden_effect = {
+				add_country_modifier = {
+					name = gen_conquest_lombardy
+					duration = -1
+				}
+			}
 		}
 	}
 }

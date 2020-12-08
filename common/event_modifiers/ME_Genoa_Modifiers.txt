@@ -82,6 +82,9 @@ gen_mediterranean_trade_republic = {
 	republican_tradition = 1
 	global_trade_power = 0.10
 }
+gen_conquest_piedmont = {
+	num_accepted_cultures = 1
+}
 gen_defensive_on_the_alps = {
 	defensiveness = 0.25
 }
@@ -108,6 +111,9 @@ gen_superba = {
 gen_merchant_army = {
 	land_morale = 0.05
 	mercenary_discipline = 0.05
+}
+gen_conquest_tuscany = {
+	num_accepted_cultures = 1
 }
 gen_arts = {
 	idea_cost = -0.1
@@ -144,6 +150,9 @@ gen_santa_maria_carignano = {
 gen_san_giovanni_battista = {
 	build_cost = -0.10
 	global_institution_spread = 0.25
+}
+gen_conquest_lombardy = {
+	num_accepted_cultures = 1
 }
 gen_trade_with_alps = {
 	trade_steering = 0.2
