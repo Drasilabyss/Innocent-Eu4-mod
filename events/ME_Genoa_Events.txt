@@ -471,6 +471,14 @@ country_event = {
 					}
 					clr_country_flag = gen_trade_steppe_trade_country
 					remove_country_modifier = gen_genoese_steppe_trade_aggreement_steppe
+					remove_opinion = {
+						who = ROOT
+						name = gen_accepted_treaty
+					}
+					reverse_remove_opinion = {
+						who = ROOT
+						name = gen_accepted_treaty
+					}
 				}
 				remove_country_modifier = gen_genoese_steppe_trade_aggreement_genoa
 			}
@@ -488,6 +496,14 @@ country_event = {
 					}
 					clr_country_flag = gen_trade_silk_road_country
 					remove_country_modifier = gen_genoese_silk_road_trade_aggreement_asiatic
+					remove_opinion = {
+						who = ROOT
+						name = gen_accepted_treaty
+					}
+					reverse_remove_opinion = {
+						who = ROOT
+						name = gen_accepted_treaty
+					}
 				}
 				remove_country_modifier = gen_genoese_silk_road_trade_aggreement_genoa
 			}

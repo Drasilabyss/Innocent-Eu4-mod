@@ -66,6 +66,51 @@ country_decisions = {
 				tag = PIS
 			}
 		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					if = {
+						limit = {
+							tag = VEN
+						}
+						province_id = 112
+					}
+					else_if = {
+						limit = {
+							tag = GEN
+						}
+						province_id = 101
+					}
+					else = {
+						province_id = 115
+					}
+					OR = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+						NOT = { base_production = 15 }
+						OR = {
+							NOT = { has_building = shipyard }
+							NOT = { has_building = grand_shipyard }
+						}
+						OR = {
+							NOT = { has_building = dock }
+							NOT = { has_building = drydock }
+						}
+					}
+				}
+				AND = {
+					base_production = 10
+					OR = {
+						NOT = { has_building = shipyard }
+						NOT = { has_building = grand_shipyard }
+					}
+					OR = {
+						NOT = { has_building = dock }
+						NOT = { has_building = drydock }
+					}
+				}
+			}
+		}
 		allow = {
 			mercantilism = 40
 			years_of_income = 2

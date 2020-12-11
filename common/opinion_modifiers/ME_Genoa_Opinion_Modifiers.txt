@@ -1,10 +1,8 @@
 gen_accepted_treaty = {
 	opinion = 50
-	months = 60
 }
 gen_refused_treaty = {
 	opinion = -50
-	months = 60
 }
 
 
